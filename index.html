@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- I have no idea if these conditional comments are necessary, they were added by the "HTML Boilerplate" extension. -->
+<!-- (extension link: https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate) -->
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en-US" translate="no" class="index optionalAnimations">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Necessary? -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kalen Weinheimer">
+    <meta name="description" content="A portfolio containing various works by Kalen Weinheimer.">
+    <meta name="keywords" contents="Video Game, Game Development, Game Developer, Video Game Development, Video Game Developer, Portfolio, Game Projects">
+    <title>Kalen Weinheimer's Portfolio</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/icons/KLogo-LightBlue-16px.png">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body onload="constructHtmlSections()">
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+
+<!----------------------------------------------------------------|Navbar -->
+    <button class="navbarToggleBtn textOutlineBlack2px alignItems" onclick="toggleNavbarVisibility()" title="Toggle Navbar">></button>
+    <nav id="navbar">
+        <a id="navbar_header" href="#top" tabindex="-1"><div id="navbar_headerDiv">
+            <!-- -?-: Use an image? -->
+            <span class="unselectable" translate="no">Kalen</span>
+            <span class="unselectable" translate="no">Weinheimer</span>
+        </div></a>
+        <hr class="navbar_hr">
+        <div id="navbar_body">
+            <a class="navbar_child unselectable" href="./index.html"    >Home      </span></a>
+            <a class="navbar_child unselectable" href="./myWork.html"   >My Work   </span></a>
+            <a class="navbar_child unselectable" href="./aboutMe.html"  >About Me  </span></a>
+            <a class="navbar_child unselectable" href="./contactMe.html">Contact Me</span></a>
+        </div>
+    </nav>
+    <!-- Navbar (re)created by constructNavbarHtml() within constructHtmlSections(). -->
+
+
+
+<!----------------------------------------------------------------|Mobile Apology -->
+    <div id="mobileApology" class="popupContainer">
+        <div class="popup">
+            <p class="popup_header alignItems">Notice:</p>
+            <p class="alignItems">This website isn't optimized for mobile viewing. I apologize for the inconvenience.</p>
+            <div class="alignItems"><button class="btn-closePopup" onclick="removeElementById('mobileApology')">OK</button></div>
+        </div>
+    </div>
+
+
+
+<!----------------------------------------------------------------|Main Background -->
+    <div id="main_backgroundContainer"><img id="main_background"></div>
+    <!-- <div id="main_background"></div> -->
+
+
+<!----------------------------------------------------------------|Main -->
+    <main id="main">
+        <!-- <div id="main_loadingOverlay"></div> -->
+        <a id="mainTop"></a>
+        <!-- <div id="main_header"></div> -->
+
+
+        <div id="main_header">
+            <div id="header_left">
+                <h1>Hello,<br>
+                    I'm <em class="myName">Kalen Weinheimer</em>,<br>
+                    a beginner game designer<br>and developer.
+                </h1>
+            </div>
+
+            <div id="header_right">
+                <div id="header_logo">
+                    <svg id="header_svgLogo" viewBox="0 0 1280 1280" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.3328249,0,0,-1.332826,0.24404648,1279.7565)">
+                            <ellipse class="outline" cx="480" cy="480" rx="442" ry="442" />
+                            <path class="outline" d="M 224.2803,828.73588 C 308.60378,680.86431 536.97955,628.14628 662.85633,724.80554 679.92534,737.91262 714.00673,599.42126 529.77826,431.84701 440.5231,350.6605 289.73352,272.93093 85.770412,273.35925" />
+                            <path class="outline" d="M 887.19162,653.95251 C 905.93294,457.3686 696.46339,346.89723 529.77826,431.84701 491.9289,279.66101 575.97336,115.0155 738.24495,121.28214" />
+
+                            <ellipse cx="480" cy="480" rx="442" ry="442" />
+                            <path d="M 224.2803,828.73588 C 308.60378,680.86431 536.97955,628.14628 662.85633,724.80554 679.92534,737.91262 714.00673,599.42126 529.77826,431.84701 440.5231,350.6605 289.73352,272.93093 85.770412,273.35925" />
+                            <path d="M 887.19162,653.95251 C 905.93294,457.3686 696.46339,346.89723 529.77826,431.84701 491.9289,279.66101 575.97336,115.0155 738.24495,121.28214" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="featuredWorksContainer" class="mainSection">
+            <div class="labelContainer"><p class="label">Featured Works:</p></div>
+
+            <div id="featuredWorks"></div>
+
+            <div id="featuredWorks_overlayContainer"><div id="featuredWorks_overlay"></div></div>
+        </div>
+
+
+
+
+        <div id="briefIntroSection" class="mainSection">
+            <div class="labelContainer"><p class="label">About Me:</p></div>
+
+            <div class="sectionContents">
+                <p>I'm a recent graduate with a B.A. in Media Arts, who's passionate about video games, game development, and level design. I have experience developing game projects with Unity and JavaScript, and an understanding of game and level design concepts. I have also spent thousands of hours playing hundreds of games across a variety of genres.</p>
+            </div>
+        </div>
+
+
+
+        <div id="socialLinksSection" class="mainSection">
+            <div class="labelContainer"><p class="label">External Links:</p></div>
+
+            <div id="socialLinksContainer">
+                <div class="socialLinkContainer">
+                    <a class="socialLink" href="https://www.linkedin.com/in/KalenWeinheimer" target="_blank" title="LinkedIn Profile">
+                        <div class="highlightOverlay"></div>
+                        <img class="icon" src="./assets/images/icons/icon_linkedIn_circleEdit.png">LinkedIn Icon</img>
+                    </a>
+                </div>
+
+                <div class="socialLinkContainer">
+                    <a class="socialLink" href="https://github.com/Kalen-W" target="_blank" title="GitHub Profile">
+                        <div class="highlightOverlay"></div>
+                        <svg class="icon" viewBox="0 0 98 98" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="49" cy="49" rx="47.4" ry="47.4" fill="#fff" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#000" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- <div class="socialLinkContainer">
+                    <a class="socialLink" href="https://www.youtube.com/" target="_blank" title="YouTube Account">
+                        <div class="highlightOverlay brighter"></div>
+                        <img class="icon" src="./assets/images/icons/icon_youtube_circle.png"></img>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+
+
+
+        <div id="contactDetailsSection" class="mainSection">
+            <div class="labelContainer"><p class="label">Contact Details:</p></div>
+
+            <div class="sectionContents">
+                <p>The easiest way to get into contact with me is through my email at: <em><a href="mailto:kweinheimer01@gmail.com">kweinheimer01@gmail.com</a></em></p>
+            </div>
+        </div>
+
+
+
+<!----------------------------------------------------------------|Footer -->
+        <footer id="footer"></footer>
+        <!-- Footer created by constructFooterHtml() within constructHtmlSections(). -->
+    </main>
+
+
+
+<!----------------------------------------------------------------|Script Reference(s) -->
+    <script src="https://www.youtube.com/iframe_api" defer></script>
+    <script src="./workDisplayScript.js"             defer></script>
+    <script src="./helperFunctions.js"               defer></script>
+    <script src="./constructHtmlSections.js"         defer></script>
+    <script src="./code.js"                          defer></script>
+    <script src="./indexScript.js"                   defer></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- I have no idea if these conditional comments are necessary, they were added by the "HTML Boilerplate" extension. -->
+<!-- (extension link: https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate) -->
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en-US" translate="no" class="myWork optionalAnimations">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Necessary? -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kalen Weinheimer">
+    <meta name="description" content="A portfolio containing various works by Kalen Weinheimer.">
+    <meta name="keywords" contents="Video Game, Game Development, Game Developer, Video Game Development, Video Game Developer, Portfolio, Game Projects">
+    <title>Kalen Weinheimer's Work</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/icons/KLogo-LightBlue-16px.png">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body onload="constructHtmlSections();">
+<!-- <body onload="constructHtmlSections(); loadDocOfWorks();"> -->
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+
+<!----------------------------------------------------------------|Navbar -->
+    <button class="navbarToggleBtn textOutlineBlack2px alignItems" onclick="toggleNavbarVisibility()" title="Toggle Navbar">></button>
+    <nav id="navbar"></nav>
+    <!-- Navbar created by constructNavbarHtml() within constructHtmlSections(). -->
+
+
+
+<!----------------------------------------------------------------|Mobile Apology -->
+    <div id="mobileApology" class="popupContainer">
+        <div class="popup">
+            <p class="popup_header alignItems">Notice:</p>
+            <p class="alignItems">This website isn't optimized for mobile viewing. I apologize for the inconvenience.</p>
+            <div class="alignItems"><button class="btn-closePopup" onclick="removeElementById('mobileApology')">OK</button></div>
+        </div>
+    </div>
+
+
+
+<!----------------------------------------------------------------|Main -->
+    <main id="main">
+        <div id="main_loadingOverlay"></div>
+        <div id="main_header">My Work</div>
+
+        <div id="workCategoriesContainer" class="unselectable">
+            <button id="workCatBtn_games"      class="workCatBtn" data-linked-element="workCat_games"    >Game Projects</button>
+            <div    id="workCat_games"         class="workCatContainer"></div>
+
+            <!-- <button id="workCatBtn_gameDesign" class="workCatBtn" data-linked-element="workCat_gameDesign"    >Game Design</button>
+            <div    id="workCat_gameDesign"    class="workCatContainer"></div> -->
+
+            <button id="workCatBtn_models"     class="workCatBtn" data-linked-element="workCat_models"   >3D Models    </button>
+            <div    id="workCat_models"        class="workCatContainer"></div>
+
+            <button id="workCatBtn_art"        class="workCatBtn" data-linked-element="workCat_art"      >2D Art       </button>
+            <div    id="workCat_art"           class="workCatContainer"></div>
+
+            <button id="workCatBtn_animation"  class="workCatBtn" data-linked-element="workCat_animation">Animation    </button>
+            <div    id="workCat_animation"     class="workCatContainer"></div>
+
+            <!-- <button id="workCatBtn_webDesign"  class="workCatBtn" data-linked-element="workCat_webDesign">Web Design   </button>
+            <div    id="workCat_webDesign"     class="workCatContainer"></div> -->
+
+            <button id="workCatBtn_misc"      class="workCatBtn" data-linked-element="workCat_misc"     >Miscellaneous</button>
+            <div    id="workCat_misc"         class="workCatContainer"></div>
+        </div>
+
+        <br><br><br><br>
+
+
+
+<!----------------------------------------------------------------|Footer -->
+        <footer id="footer"></footer>
+        <!-- Footer created by constructFooterHtml() within constructHtmlSections(). -->
+    </main>
+
+
+
+<!----------------------------------------------------------------|Script Reference(s) -->
+    <script src="https://www.youtube.com/iframe_api" defer></script>
+    <script src="./helperFunctions.js"               defer></script>
+    <script src="./workDisplayScript.js"             defer></script>
+    <script src="./constructHtmlSections.js"         defer></script>
+    <script src="./code.js"                          defer></script>
+    <script src="./myWorkScript.js"                  defer></script>
+</body>
+</html>

@@ -1,0 +1,1585 @@
+{
+    "$schema": "./documentationOfWorks.schema.json",
+    "meta": {
+        "featuredWorkIds": ["untitledBowGame", "jsRaycastEngine", "projectUndeadStrategy", "introToAnimationFlipbook"],
+
+        "categoryData": {
+            "game": { "id": "game",
+                "displayName": "Game Project",
+                "displayName_plural": "Game Projects",
+                "desc": "Video games and things that aspired to be video games."
+            },
+            "gameDesign": { "id": "gameDesign",
+                "displayName": "Game Design",
+                "desc": "Things related to game design, such as game design documents or level design sketches."
+            },
+            "model": { "id": "model",
+                "displayName": "3D Model",
+                "displayName_plural": "3D Models",
+                "desc": "3D models."
+            },
+            "art": { "id": "art",
+                "displayName": "2D Art",
+                "desc": "2D Art, either created physically or digitally."
+            },
+            "animation": { "id": "animation",
+                "displayName": "Animation",
+                "displayName_plural": "Animations",
+                "desc": "2D and 3D animations."
+            },
+            "webDesign": { "id": "webDesign",
+                "displayName": "Web Design",
+                "desc": "Websites."
+            },
+            "misc": { "id": "misc",
+                "displayName": "Miscellaneous",
+                "desc": "Projects that don't fit neatly into any other category."
+            }
+        },
+
+
+        "tagData": {
+            "firstPerson": { "id": "firstPerson",
+                "displayName": "First-Person",
+                "desc": "Displayed from a first-person camera perspective."
+            },
+            "thirdPerson": { "id": "thirdPerson",
+                "displayName": "Third-Person",
+                "desc": "Displayed from a third-person camera perspective."
+            },
+            "topDown": { "id": "topDown",
+                "displayName": "Top-Down",
+                "desc": "Displayed from a top-down camera perspective."
+            },
+            "sideScroller": { "id": "sideScroller",
+                "displayName": "Side-Scroller",
+                "desc": "Displayed from a side-view camera perspective."
+            },
+            "isometric": { "id": "isometric",
+                "displayName": "Isometric",
+                "desc": "Displayed from a isometric projection based camera perspective."
+            },
+
+            "action": { "id": "action",
+                "displayName": "Action",
+                "desc": "Emphasizes physical challenges, such as hand-eye coordination & reaction time."
+            },
+            "strategy": { "id": "strategy",
+                "displayName": "Strategy",
+                "desc": "Emphasizes decision-making skills and complex strategical thinking."
+            },
+            "turnBased": { "id": "turnBased",
+                "displayName": "Turn-Based",
+                "desc": "Gameplay takes place within distinct turns."
+            },
+            "puzzle": { "id": "puzzle",
+                "displayName": "Puzzle",
+                "desc": "Is either directly a puzzle, or a game with an emphasis on solving puzzles."
+            },
+
+            "shooter": { "id": "shooter",
+                "displayName": "Shooter",
+                "desc": "A subgenre of action games, defined by the use of projectile weaponry, generally being used to defeat enemies."
+            },
+            "rogueLike": { "id": "rogueLike",
+                "displayName": "Rogue-Like",
+                "desc": "A subgenre of role-playing games, primarily defined by procedurally generated environments and permanent death of the player character."
+            },
+
+            "physicalSketch": { "id": "physicalSketch",
+                "displayName": "Sketch",
+                "desc": "A sketch drawn using physical mediums."
+            },
+            "digitalSketch": { "id": "digitalSketch",
+                "displayName": "Digital Sketch",
+                "desc": "A sketch drawn using digital software."
+            },
+            "pixelArt": { "id": "pixelArt",
+                "displayName": "Pixel Art",
+                "desc": "Digital art with importance placed on individual pixels."
+            },
+
+            "modelWeapon": { "id": "modelWeapon",
+                "displayName": "Weapon Model",
+                "desc": "A 3D model depicting some form of weaponry."
+            },
+            "3dEnvironment": { "id": "3dEnvironment",
+                "displayName": "3D Environment",
+                "desc": "A designed environment created within a 3D space."
+            }
+        },
+
+
+        "devToolData": {
+            "html": { "id": "html",
+                "displayName": "HTML",
+                "desc": "(HyperText Markup Language) The standard markup language for documents displayed in a web browser."
+            },
+            "css": { "id": "css",
+                "displayName": "CSS",
+                "desc": "(Cascading Style Sheets) A style sheet language for describing the presentation of a markup document."
+            },
+            "javaScript": { "id": "javaScript",
+                "displayName": "JavaScript",
+                "desc": "An object-oriented programming language used to create interactive webpage behavior."
+            },
+            "cSharp": { "id": "cSharp",
+                "displayName": "C#",
+                "desc": "A general-purpose high-level programming language supporting multiple paradigms."
+            },
+
+            "unity": { "id": "unity",
+                "displayName": "Unity",
+                "desc": "A cross-platform game engine developed by Unity Technologies."
+            },
+
+            "blender": { "id": "blender",
+                "displayName": "Blender",
+                "desc": "A free & open-source 3D computer graphics software used to create 3D models."
+            },
+            "krita": { "id": "krita",
+                "displayName": "Krita",
+                "desc": "A free & open-source raster graphics (image) editor."
+            },
+            "touchDesigner": { "id": "touchDesigner",
+                "displayName": "Touch Designer",
+                "desc": "An interactive design application that allows users to create real-time interactive content developed by Derivative."
+            },
+            "photoshop": { "id": "photoshop",
+                "displayName": "Photoshop",
+                "desc": "A raster graphics (image) editor developed by Adobe Inc."
+            },
+            "illustrator": { "id": "illustrator",
+                "displayName": "Illustrator",
+                "desc": "A vector graphics editor developed by Adobe Inc."
+            },
+            "afterEffects": { "id": "afterEffects",
+                "displayName": "After Effects",
+                "desc": "A visual effects, motion graphics, & video editing software developed by Adobe Inc."
+            },
+
+            "atom": { "id": "atom",
+                "displayName": "Atom",
+                "desc": "Was a free & open-source source-code editor made by GitHub. (No longer under development.)"
+            },
+            "vsCode": { "id": "vsCode",
+                "displayName": "VS Code",
+                "desc": "(Visual Studio Code) A source-code editor made by Microsoft."
+            },
+
+            "pencilAndPaper": { "id": "pencilAndPaper",
+                "displayName": "Pencil & Paper",
+                "desc": "Good old-fashion pencil and paper."
+            }
+        }
+    },
+
+
+
+
+    "games": [
+        {
+            "id":               "untitledBowGame",
+            "title":            "Untitled Bow Game",
+            "category":         "game",
+            "date_devStart":    "2023-01-24",
+            "date_devEnd":      "present",
+            "tags":             ["puzzle", "shooter", "firstPerson"],
+            "devTools":         ["cSharp", "unity", "blender", "krita", "vsCode"],
+            "links":            [
+                {
+                    "url": "https://drive.google.com/file/d/1sbcmzxElN-dLQozvxSBByjXyn5fOy32Y/view",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "Download Game Executable"
+                }
+            ],
+            "desc_brief":       "A first-person puzzle game, centered around using a bow and various arrows with special effects, developed with Unity.",
+            "desc_detailed":    "<h2 class='noBr'>Overview</h2>This game project was created as a semester long project for my <em>Game Development</em> Class. The original concept I had for this was to be a first-person metroidvania centered around the use of a bow for both combat and puzzle solving.<br><br>There was a lot of other mechanics I had thought of, but didn't have the time to implement, and the majority of my time and effort was spent on programming, which unfortunately led to insufficient time to work on the level design. However, regardless of the rough state it may currently be in, this project was the first more complex 3D game project I developed with Unity (and in general), and I learned a lot from working on it.<h2>Original Design Document Excerpt</h2><h3 class='noBr'>Overview</h3><ul><li>A 3D first-person Metroidvania with Combat, but a primary focus on puzzles.</li><li>The game will focus around the use of a bow and arrow(s) for both combat and puzzle solving.</li><li>The arrows shot by the bow will embed themselves into the environment and may provide various effects, however, there is a limit on how many of these arrows may exist at once.</li><li>Shooting an arrow when at max arrow count will despawn the oldest arrow, or the player may manually despawn arrows.</li><li>Hitting an enemy will not count towards the arrow limit.</li><li>The max arrow limit will be raised throughout the game.</li><li>New arrow types will be introduced throughout the game.</li></ul><h3>Core Mechanics</h3><ul><li>Jumping / Platforming</li><li>Shooting Bow and Arrows</li><li>Picking Up And Dropping Objects</li></ul><h3>Player Actions</h3><ul><li>Walk / Run</li><li>Jump / Double Jump</li><li>Shoot Bow and Arrow</li><li>Change Arrow Type</li><li>Activate Buttons and Levers</li><li>Pick Up, Drop, and Throw Objects</li></ul><h3>Arrow Type Examples</h3><ul><li>Basic Arrow:<ul><li>Sticks into objects & can activate buttons / plates.</li><li>Deals damage to enemies. (As do all other arrows.)</li></ul></li><li>Tether Arrow:<ul><li>When embedded into certain objects, they can be pulled towards the player.</li><li>Two tether arrows can be shot consecutively to form a connection between two objects.</li></ul></li><li>Grapple Arrow:<ul><li>Upgraded tether arrow, when embedded into a valid object, the player can be pulled towards it.</li></ul></li><li>Ghost Arrow:<ul><li>When embedded into a valid object, the object becomes intangible, allowing objects to travel through it.</li></ul></li></ul>",
+            "img_thumbnail":    {
+                "url": "./assets/images/gameImages/untitledBowGame_elevatorThumbnail.png",
+                "type": "image",
+                "desc": "Thumbnail image showing an elevator from the game."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/gameImages/untitledBowGame_hallway1.png",
+                    "type": "image",
+                    "desc": "Screenshot of a hallway area."
+                },
+                {
+                    "url": "./assets/images/gameImages/untitledBowGame_hallway2.png",
+                    "type": "image",
+                    "desc": "Screenshot of a second hallway area."
+                },
+                {
+                    "url": "./assets/images/gameImages/untitledBowGame_cavern1.png",
+                    "type": "image",
+                    "desc": "Screenshot of a cavern area."
+                },
+                {
+                    "url": "./assets/images/gameImages/untitledBowGame_frozenFan.png",
+                    "type": "image",
+                    "desc": "Screenshot of a fan that is currently frozen due to an ice arrow."
+                },
+                {
+                    "url": "./assets/images/gameImages/untitledBowGame_frozenCube.png",
+                    "type": "image",
+                    "desc": "Screenshot of a cube that is currently frozen due to an ice arrow"
+                },
+                {
+                    "url": "./assets/images/gameImages/untitledBowGame_elevatorRoom.png",
+                    "type": "image",
+                    "desc": "Screenshot of a room with an elevator."
+                },
+                {
+                    "url": "./assets/images/gameImages/GameDevProjectElevator1.png",
+                    "type": "image",
+                    "desc": "A close-up image of an elevator from the game with its door open."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [
+                {
+                    "url": "https://blog.gamedev.tv/how-to-basic-pause-system-in-unity/",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"How to - Basic Pause System in Unity\" by Miguel Angel Yee Rebollar."
+                },
+                {
+                    "url": "https://unitycodemonkey.com/video.php?v=mONHucoYASU",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "'HealthSystem' script made by Code Monkey.",
+                    "desc": "Game's health system was based off Code Monkey's work, which I downloaded from their website."
+                },
+                {
+                    "url": "https://www.brechtos.com/tagselectorattribute/",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Using tags as a dropdown property in Unity’s inspector using PropertyDrawers\" by Brecht Lecluyse."
+                },
+                {
+                    "url": "https://gamedev.stackexchange.com/a/181695",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "The 'EventSystem' script uses the 'curiously recurring template pattern', and is based off this example."
+                },
+                {
+                    "url": "https://gamedev.stackexchange.com/a/199843",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "'OmniLookRotation' Function by DMGregory on Stack Exchange."
+                },
+                {
+                    "url": "https://youtu.be/d_OBjV7c1CY",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Sprite Shadows in Unity - Cast and receive shadows using a SpriteRenderer\" by Tarodev."
+                },
+                {
+                    "url": "https://youtu.be/GAh225QNpm0",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Show a Silhouette When Hidden Using URP Renderer Features (Unity Tutorial)\" by Ketra Games."
+                },
+                {
+                    "url": "https://youtu.be/zZhvIeXvSGA",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Writing Shaders in Unity - Smooth Overlay Textures - Beginner Tutorial\" by Dapper Dino.",
+                    "desc": "Used to learn about creating custom shaders, though specific shader may not actually be used anywhere in the game."
+                },
+                {
+                    "url": "https://gist.github.com/phi-lira/225cd7c5e8545be602dca4eb5ed111ba",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Universal Pipeline Template Shader\" by phi-lira.",
+                    "desc": "Used as a template and modified to fit my use case."
+                },
+                {
+                    "url": "https://youtu.be/Tbe2niFQI2M",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Recreate the PS1's Affine Texture Warping with Unity Shaders\" by Daniel Ilett.",
+                    "desc": "Used as a reference to add Affine Texture Mapping to a different shader."
+                },
+                {
+                    "url": "https://gist.github.com/Saduras/f0464266a2d217e3ee31649fce635a03",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Parallax Mapping Shader\" by Saduras.",
+                    "desc": "Used as a reference to add parallax mapping to a different shader."
+                },
+                {
+                    "url": "https://assetstore.unity.com/packages/essentials/starter-assets-first-person-character-controller-urp-196525",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Starter Assets - First Person Character Controller | URP\" by Unity Technologies",
+                    "desc": ""
+                },
+                {
+                    "url": "https://assetstore.unity.com/packages/3d/environments/boss-of-war-assets-86108",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Boss Of War | Assets\" by Stepan Koppel",
+                    "desc": "3D model assets used within the environment."
+                },
+                {
+                    "url": "https://assetstore.unity.com/packages/3d/props/furniture/alchemy-lab-props-41758",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Alchemy Lab Props\" by Mana Station",
+                    "desc": "3D model assets used within the environment."
+                },
+                {
+                    "url": "https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/skeleton-warrior-1-222338",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Skeleton Warrior 1\" by AlexN",
+                    "desc": "3D character model asset used within the environment."
+                },
+                {
+                    "url": "https://assetstore.unity.com/packages/3d/props/skull-platform-105664",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Skull Platform\" by Kubiqual",
+                    "desc": "3D model asset used within the environment."
+                },
+                {
+                    "url": "https://assetstore.unity.com/packages/3d/environments/fantasy/the-portal-collection-205438",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"The Portal Collection\" by ReversedInt",
+                    "desc": "3D model assets used within the environment."
+                },
+                {
+                    "url": "https://assetstore.unity.com/packages/3d/environments/fantasy/translucent-crystals-106274",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Translucent Crystals\" by SineVFX",
+                    "desc": "3D model asset used within the environment."
+                },
+                {
+                    "url": "https://assetstore.unity.com/packages/tools/utilities/colourful-hierarchy-category-gameobject-205934",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Colourful Hierarchy Category GameObject\" by M STUDIO HUB."
+                }
+            ],
+            "enabled":          true,
+            "priority":         1
+        },
+
+        {
+            "id":               "jsRaycastEngine",
+            "title":            "JavaScript 2.5D Raycasting Engine",
+            "category":         "game",
+            "date_devStart":    "2022-02-23",
+            "date_devEnd":      "2022-08-22",
+            "tags":             ["shooter", "firstPerson", "action"],
+            "devTools":         ["html", "css", "javaScript", "photoshop", "krita", "atom"],
+            "links":            [
+                {
+                    "url": "https://kalen-w.github.io/jsRaycastEngine/",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "Play In Browser",
+                    "desc": "Link to the GitHub hosted web page where you can play this game."
+                },
+                {
+                    "url": "https://github.com/Kalen-W/jsRaycastEngine",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "GitHub Repo",
+                    "desc": "Link to the GitHub Repository for this game."
+                }
+            ],
+            "desc_brief":       "A simple 2.5D raycasting engine/game, similar to Wolfenstein 3D, developed with JavaScript.",
+            "desc_detailed":    "<h2 class='noBr'>Overview</h2>A simple 2.5D raycasting engine/game programmed in JavaScript, drawing onto a HTML canvas, and using HTML & CSS for most of the UI. This game started as a final project for my <em>Creative Coding 2</em> class, but I continued working on it for a few months afterwards.<br>This was by far the most complex project I had developed at the time, it was something I really enjoyed working on, and I learned a lot about game development and programming from making it.<h3>2.5D Raycasting Engine</h3>In case you're not aware, a 2.5D raycasting engine is a game engine that technically operates in 2D space, but is rendered to appear 3D. This is done by casting 'rays' from the player's position in a cone, and detecting at what distance it hits a wall, which determines the height that portion of the wall is rendered at. This type of rendering was common in the early days of \"3D\" P.C. video games, with some notable examples being <em>Wolfenstein 3D</em>, <em>Doom</em>, and <em>Duke Nukem 3D</em>. If you want a more in depth description of raycasting, feel free to look through the credited websites listed below.",
+            "img_thumbnail":    {
+                "url": "./assets/images/gameImages/jsRaycastEngine/jsRaycastEngine_gettingShotAt.png",
+                "type": "image",
+                "desc": "Screenshot depicting the player being shot at by an enemy."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/gameImages/jsRaycastEngine/jsRaycastEngine_shootingAtEnemies.png",
+                    "type": "image",
+                    "desc": "Screenshot depicting the player shooting enemies."
+                },
+                {
+                    "url": "./assets/images/gameImages/jsRaycastEngine/jsRaycastEngine_interactingWithLever.png",
+                    "type": "image",
+                    "desc": "Screenshot depicting the player interacting with a lever, which triggers a change in the level's map."
+                },
+                {
+                    "url": "./assets/images/gameImages/jsRaycastEngine/jsRaycastEngine_recentlyDeceasedEnemy.png",
+                    "type": "image",
+                    "desc": "Screenshot depicting an enemy shortly after it was killed."
+                },
+                {
+                    "url": "./assets/images/gameImages/jsRaycastEngine/jsRaycastEngine_showcasingMinimap.png",
+                    "type": "image",
+                    "desc": "Screenshot depicting the minimap (which shows the entire level layout)."
+                },
+                {
+                    "url": "./assets/images/gameImages/jsRaycastEngine/jsRaycastEngine_mainMenu.png",
+                    "type": "image",
+                    "desc": "Screenshot showing the game's simple main menu."
+                },
+                {
+                    "url": "./assets/images/gameImages/jsRaycastEngine/jsRaycastEngine_generalOptionsMenu.png",
+                    "type": "image",
+                    "desc": "Screenshot showing the game's general options menu."
+                },
+                {
+                    "url": "./assets/images/gameImages/jsRaycastEngine/jsRaycastEngine_keybindsMenu.png",
+                    "type": "image",
+                    "desc": "Screenshot showing the game's keybinds menu."
+                }
+            ],
+            "relatedWorks":     ["jsRaycastEnginePixelArt"],
+            "credits":          [
+                {
+                    "url": "https://youtu.be/5nSFArCgCXA",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Make 3D Javascript Raycasting Engine\" by Maksim Ivanov.",
+                    "desc": "This video tutorial served as the basis for this project, but, it was to simple for all the features I wanted, and so I had to rely on other tutorials as well."
+                },
+                {
+                    "url": "https://dev.opera.com/articles/3d-games-with-canvas-and-raycasting-part-1/",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Creating Pseudo 3D Games With HTML 5 Canvas and Raycasting\" by Jacob Seidelin.",
+                    "desc": "This fairly old tutorial (2008) uses a very different rendering method from my project, but helped serve as the foundation for expanding upon the game's rendering engine thanks to providing many specific math formulas necessary for rendering."
+                },
+                {
+                    "url": "https://permadi.com/1996/05/ray-casting-tutorial-table-of-contents/",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Ray-Casting Tutorial For Game Development And Other Purposes\" by F. Permadi.",
+                    "desc": "This tutorial helped me in expanding upon the functionality of the game by explaining several more complex concepts behind raycasting engines."
+                },
+                {
+                    "url": "https://lodev.org/cgtutor/raycasting.html",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Lode's Computer Graphics Tutorial - Raycasting\" by Lode Vandevenne.",
+                    "desc": "This tutorial helped to explain how much of the math behind raycast rendering worked."
+                },
+                {
+                    "url": "https://github.com/jakesgordon/javascript-state-machine",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Javascript State Machine\" by 'jakesgordon' on GitHub.",
+                    "desc": "A library for implementing finite state machines in JavaScript. Used to create the simple enemy A.I."
+                }
+            ],
+            "enabled":          true,
+            "priority":         1
+        },
+
+        {
+            "id":               "projectUndeadStrategy",
+            "title":            "Project Undead Strategy",
+            "category":         "game",
+            "date_devStart":    "2022-09-15",
+            "date_devEnd":      "2022-12-14",
+            "tags":             ["rogueLike", "turnBased", "strategy"],
+            "devTools":         ["cSharp", "unity", "krita", "vsCode"],
+            "links":            [
+                {
+                    "url": "https://kalen-w.github.io/MART491-GameStudio/ProjectUndeadStrategyV0.3/",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "Play In Browser"
+                },
+                {
+                    "url": "https://github.com/Kalen-W/MART460-GameEngines/raw/main/FinalProject/ProjectUndeadStrategy-DemoV0.3WindowsBuild.zip",
+                    "type": "download", "absoluteUrl": true,
+                    "displayName": "Download Game Executable"
+                },
+                {
+                    "url": "https://github.com/Kalen-W/MART460-GameEngines/tree/main/FinalProject",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "GitHub Repo"
+                },
+                {
+                    "url": "https://github.com/Kalen-W/MART460-GameEngines/blob/main/FinalProject/ReadMe.md",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "Game Instructions"
+                }
+            ],
+            "desc_brief":       "A simple rogue-like with turn-based grid combat, developed with Unity.",
+            "desc_detailed":    "<h2 class='noBr'>Overview</h2>A simple rogue-like with turn-based grid combat developed with Unity. Originally made as a semester long project for my <em>Game Engines</em> class. This project is fairly bare-bones, and I wasn't able to get nearly as much done as I had originally hoped, as I simply ran out of time. Because this was the first bigger project I developed in Unity, I had to do a lot of learning as I went, and ended up needing to rework large portions of it, so while it's not my best work, I'm still proud of all the work I put into it and how much I learned from making it.<h2>Original Design Document Excerpt</h2><h3 class='noBr'>A Brief Description</h3>Rogue-like with turn-based strategy grid combat similar to <em>Advance Wars</em>. Features a leveling system, equipment system, and uses a map system similar to <em>Slay the Spire</em>. The player plays the role of a necromancer who can summon undead units to fight their enemies.<h3>Combat</h3>Combat is turn-based and takes place upon a square grid. The player and A.I. will take turns where they may command every unit they have.<h4>Commander Unit</h4>The commander unit is a necromancer which represents the player tends to be much stronger than other units and as effective against all unit types. However, the commander is the only unit whose health doesn’t reset after battle, and the commander’s death results in a game over.<h4>Minion Units</h4>Other than the commander there are three other unit types: melee, ranged, and aerial. The unit types mostly act as a simple rock, paper, scissors dynamic within the prototype, but would ideally be expanded upon with greater complexity through additional types and differing levels of effectiveness against each other.<h4>Unit Stats</h4><ul><li>Movement Speed: Determines how far the unit may travel within a single turn.</li><li>Attack Range: Determines how close/far a target must be for the unit to attack it.</li><li>Accuracy: Determines chance to hit. (Most units have 100% accuracy, but this may be altered by effects or something.)</li><li>Health: Decreases when attacked, the unit will die if it reaches zero, and modifies how much damage the unit deals.</li><li>Attack: Determines how much base damage is dealt when the unit attacks. (Actual damage is affected by things like type effectiveness.)</li></ul><h4>Unit Types</h4><ul><li>Melee: Effective against range, but cannot hit aerial units (subject to change?).</li><li>Ranged: Effective against aerial units, but they’re slower and cannot attack units within 1 (2?) cell away from them.</li><li>Aerial: Effective against melee and they’re faster, but {more expensive? rarer? low accuracy?}.</li></ul><h4>Terrain</h4><ul><li>Various terrain types will have different defense values which decrease how much damage units on them will take from attacks.</li><li>Some terrain will decrease how far a unit may travel within one turn. Though some units (such as aerial) may not be affected by some of these speed penalties.</li></ul><h4>Unit Limitations</h4><ul><li>The commander unit is a necromancer, and as such can revive and heal/repair their units after every battle. And while the player isn’t limited by the number of units they may add to their army, they are limited to how many can be used within battle. This is because summoning a unit requires a specific amount of a limited resource (which is fully recovered after every battle).</li><li>All units have a rarity tier which may be used to determine if certain perks / equipment affect them. (ex: All basic minions have +4 health.)</li></ul><h3>Map System</h3><h4 class='noBr'>Map Layout</h4><ul><li>A map will consist of a series of connected dots where the player may travel from one dot to another. [FTL: Faster Than Light, Slay the Spire]</li><li>Each dot on the map will contain either a combat encounter, an event, or a rest point (& possibly a shop if I get that far).</li><li>Rest points (safe zone? campsite?) are where the player may replenish their commander’s health.</li></ul><h4>Map Events</h4><ul><li>Most map events that aren’t combat will be presented in the form of a short explanation presented alongside an image, with one or more possible outcomes to choose from.</li><li>The player may be given the opportunity to combine two or more of their units to create a single stronger unit.</li></ul>",
+            "img_thumbnail":    {
+                "url": "./assets/images/gameImages/projectUndeadStrategy_combatScreen-zoomedIn.png",
+                "type": "image", "imageRendering": "pixelated",
+                "desc": "The game's combat screen, where combat encounters take place."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/gameImages/projectUndeadStrategy_moveAndAttackRange.png",
+                    "type": "image",
+                    "desc": "The movement and attack range of a player unit on the combat screen."
+                },
+                {
+                    "url": "./assets/images/gameImages/projectUndeadStrategy_equipmentScreen.png",
+                    "type": "image",
+                    "desc": "The game's equipment menu, where items with various effects can be equipped."
+                },
+                {
+                    "url": "./assets/images/gameImages/projectUndeadStrategy_mapScreen.png",
+                    "type": "image",
+                    "desc": "The game's map screen, where the player progresses between nodes to reach the last node on the right."
+                }
+            ],
+            "relatedWorks":     ["projectUndeadStrategyPixelArt"],
+            "credits":          [
+                {
+                    "url": "https://youtube.com/playlist?list=PLzDRvYVwl53uhO8yhqxcyjDImRjO9W722",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Grid System in Unity (How to make it and where to use it)\" by Code Monkey.",
+                    "desc": "The tile/grid system (including pathfinding & level saving/loading) was based off Code Monkey's tutorials. <span class='subtle'>(Note: Only the first 8 videos in this playlist were used.)</span>"
+                },
+                {
+                    "url": "https://youtu.be/MNSQWPhalGQ",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Making a Turn Based Strategy Game in Unity\" by Angus Fan.",
+                    "desc": "Used to help create the pathfinding and grid overlay systems."
+                },
+                {
+                    "url": "https://blog.gamedev.tv/how-to-basic-pause-system-in-unity/",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"How to - Basic Pause System in Unity\" by Miguel Angel Yee Rebollar."
+                }
+            ],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "untitledShmupGame",
+            "title":            "Untitled Shmup Game",
+            "category":         "game",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2022-05-13",
+            "tags":             ["shooter", "topDown", "action"],
+            "devTools":         ["html", "css", "javaScript", "atom"],
+            "links":            [
+                {
+                    "url": "https://kalen-w.github.io/MART441-WebTechnologies/finalProject-v2/",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "Play In Browser"
+                },
+                {
+                    "url": "https://github.com/Kalen-W/MART441-WebTechnologies/tree/main/finalProject-v2",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "GitHub Repo"
+                }
+            ],
+            "desc_brief":       "A <em>very</em> basic \"shoot 'em up\" game programmed with JavaScript.",
+            "desc_detailed":    "A <em>very</em> basic \"shoot 'em up\" game programmed with JavaScript, this version was created as a final project for my <em>Web Technologies</em> class. The original version was created with the use of p5.js, but this version is a rework which removed the use of p5.js functions. <span class='subtle'>(Although, this may be incorrect, as I either forgot to remove the p5.js npm import, or there may still be some use of p5.js that I don't remember.)</span> This game was programmed in JavaScript, and uniquely doesn't use any sprites, instead most visuals being drawn onto the HTML canvas are vertex shapes.<br><br>The game is very simple, with no end goal, and simply consists of an endless number of enemies moving across the screen, with a counter of how many the player has defeated. And the player's health is shown in the bottom left corner, which, if lowered to zero by colliding with enemies, will simply freeze the game, but it can be manually restarted via the pause menu.",
+            "img_thumbnail":    {
+                "url": "./assets/images/gameImages/UntitledShmupGame_Screenshot1.png",
+                "type": "image",
+                "desc": "A zoomed in screenshot of Untitled Shmup Game being played."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/gameImages/UntitledShmupGame_Screenshot2.png",
+                    "type": "image",
+                    "desc": "A screenshot of Untitled Shmup Game being played."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         -1
+        }
+    ],
+
+
+
+
+    "models": [
+        {
+            "id":               "dvaGunModel",
+            "title":            "D.Va Gun Model",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2019-06-30",
+            "tags":             ["modelWeapon"],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A 3D model recreation of the gun used by D.Va from <em>Overwatch</em>.",
+            "desc_detailed":    "A 3D model recreation of the gun used by D.Va from <em>Overwatch</em>. As one might be able to tell from the visual noise/graininess of the renders, this model is a bit older, having been created during my senior year of high school.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/DvaGun7.png",
+                "type": "image",
+                "desc": "Side angle render of the 3D model."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/modelImages/DvaGun1.png",
+                    "type": "image",
+                    "desc": "Back side angle render of the 3D model."
+                },
+                {
+                    "url": "./assets/images/modelImages/DvaGun4.png",
+                    "type": "image",
+                    "desc": "Bottom side angle render of the 3D model."
+                },
+                {
+                    "url": "./assets/images/modelImages/DvaGun6-LowerRez.png",
+                    "type": "image",
+                    "desc": "Front side angle render of the 3D model."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "remington870Model",
+            "title":            "Remington 870 Shotgun Model",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-10-09",
+            "tags":             ["modelWeapon"],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A simple untextured 3D model of the <em>Remington 870</em> shotgun.",
+            "desc_detailed":    "A simple, untextured, and low detail 3D model of <em>the Remington 870</em> shotgun.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/remington870Model_render.png",
+                "type": "image",
+                "desc": "A render of the 3D model."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "swordAndSpearModels",
+            "title":            "Simple Sword And Spear Models",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2019-MM-DD",
+            "tags":             ["modelWeapon"],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "Very simple untextured sword and spear models.",
+            "desc_detailed":    "Some very simple untextured sword and spear models which I made during my senior year of high school. The images show a few different versions created as I was working on the materials.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/SwordSpearTest4-LowerRez.png",
+                "type": "image",
+                "desc": "A render of the 3D models."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/modelImages/SwordSpearTest2-LowerRez.png",
+                    "type": "image",
+                    "desc": "A render of the 3D models."
+                },
+                {
+                    "url": "./assets/images/modelImages/SwordSpearTest-LowerRez.png",
+                    "type": "image",
+                    "desc": "An earlier render of the sword and spear before they had materials."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "abstractArtDecoModel",
+            "title":            "Abstract Art Deco Model",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2020-10-27",
+            "tags":             [],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "An abstract 3D model inspired by the art deco style.",
+            "desc_detailed":    "A simple and abstract 3D model inspired by the art deco style, which was created during my first year of college for a small assignment.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/ArtDecoBlenderVersion.jpg",
+                "type": "image",
+                "desc": "A render of the 3D model."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         -1
+        },
+
+        {
+            "id":               "80sCafeEnvironment",
+            "title":            "1980's Café Diner Environment",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-09-05",
+            "tags":             ["3dEnvironment"],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A simple 3D environment meant to depict a 1980's style café diner.",
+            "desc_detailed":    "A simple 3D environment meant to depict a 1980's style café diner. As one might surmise from the neon sign, this was originally created for Mother's Day.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/80sCafeRender3.png",
+                "type": "image",
+                "desc": "Render of a 3D environment showing a boombox, flower vase, and rose petals on a table in a 1980's style café diner."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/modelImages/MothersDay2021RenderPetals.png",
+                    "type": "image",
+                    "desc": "A close up of the rose petals on the diner's table."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "gasGrillModel",
+            "title":            "Gas Grill Model",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2019-06-17",
+            "tags":             [],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A simple 3D model of a gas grill.",
+            "desc_detailed":    "A simple 3D model of a gas grill that I created during my senior year of high school. The visual noise/graininess of the renders is due to being made before I quite knew what I was doing in terms of rendering. As one might surmise from the text, this was originally created for Father's Day.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/Grill4.png",
+                "type": "image",
+                "desc": "Front side angle render of the 3D model"
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/modelImages/Grill3.png",
+                    "type": "image",
+                    "desc": "Top side angle render of the 3D model."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         -1
+        },
+
+        {
+            "id":               "poolTableModel",
+            "title":            "Pool Table Model",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "YYYY-MM-DD",
+            "tags":             [],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A simple 3D model of a pool table with no texture or materials.",
+            "desc_detailed":    "A simple 3D model of a pool table with no texture or materials.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/PoolTable.png",
+                "type": "image",
+                "desc": "A render of the 3D model."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         -1
+        },
+
+        {
+            "id":               "ibmPcJrModel",
+            "title":            "IBM PCjr Model",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2020-08-17",
+            "tags":             [],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A simple untextured 3D model of the <em>IBM PCjr</em> computer & monitor.",
+            "desc_detailed":    "A simple untextured 3D model of the <em>IBM PCjr</em> computer & monitor.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/ibmPcJrModel_render.png",
+                "type": "image",
+                "desc": "A render of the 3D model."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "gameBoyColorModel",
+            "title":            "GameBoy Color Model",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2020-10-18",
+            "tags":             [],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A simple untextured 3D model of a <em>GameBoy Color</em>.",
+            "desc_detailed":    "A simple untextured 3D model of a <em>GameBoy Color</em>.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/gameBoyColorModel_render.png",
+                "type": "image",
+                "desc": "A render of the 3D model."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "peregrineFalconShipModel",
+            "title":            "Peregrine Falcon Ship Model",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2020-10-18",
+            "tags":             [],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A 3D voxel model of a space ship inspired by the Peregrine Falcon.",
+            "desc_detailed":    "A 3D voxel model of a space ship inspired by the Peregrine Falcon. Although this was never used for anything, my original intention for this design/model was a space ship to be used within a <abbr title=\"Shoot 'em up\">shmup</abbr> game.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/peregrineFalconShipModel_render.png",
+                "type": "image",
+                "desc": "Render of 3 peregrine falcon ships shown at different angles."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "flashDriveModel",
+            "title":            "Flash Drive Model",
+            "category":         "model",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-04-30",
+            "tags":             [],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A simple untextured 3D model of a flash drive.",
+            "desc_detailed":    "A simple untextured 3D model of a flash drive, which was specifically based on the <em>Kingston Data Traveler 100 G3</em>.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/flashDriveModel_render.png",
+                "type": "image",
+                "desc": "Render of the front and back of the 3D model."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/modelImages/flashDriveModel_closedRender.png",
+                    "type": "image",
+                    "desc": "Render of the flash drive model when closed."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "pierEnvironment",
+            "title":            "Pier Environment",
+            "category":         "model",
+            "date_devStart":    "2019-01-01",
+            "date_devEnd":      "2019-04-30",
+            "tags":             ["3dEnvironment"],
+            "devTools":         ["blender"],
+            "links":            [],
+            "desc_brief":       "A 3D environment depicting a pier I designed.",
+            "desc_detailed":    "A 3D pier environment that was created for a <abbr title='Business Professionals of America'>BPA</abbr> 3D modeling competition during my senior year of high school. While feeling rather amateurish now, this was, at the time, one of the biggest projects I'd ever worked on. I was fairly proud of it at the time, thus I decided to include it in my portfolio, despite it no longer being representative of what I can make.",
+            "img_thumbnail":    {
+                "url": "./assets/images/modelImages/pierEnvironment_beginningLowAngleRender.png",
+                "type": "image",
+                "desc": "A low angle render of the beginning of pier."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/modelImages/pierEnvironment_topSideAngleRender.png",
+                    "type": "image",
+                    "desc": "A top side angle render of the pier."
+                },
+                {
+                    "url": "./assets/images/modelImages/pierEnvironment_middleLowAngleRender.png",
+                    "type": "image",
+                    "desc": "A low angle render of the middle of the pier."
+                },
+                {
+                    "url": "./assets/images/modelImages/pierEnvironment_endLowAngleRender.png",
+                    "type": "image",
+                    "desc": "A low angle render of the end of the pier."
+                },
+                {
+                    "url": "./assets/images/modelImages/pierEnvironment_topDownRender.png",
+                    "type": "image",
+                    "desc": "A top-down render of the pier."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        }
+    ],
+
+
+
+
+    "art": [
+        {
+            "id":               "scannedHsSketch1",
+            "title":            "High School Sketch 1",
+            "category":         "art",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2019-MM-DD",
+            "tags":             ["physicalSketch"],
+            "devTools":         ["pencilAndPaper", "photoshop"],
+            "links":            [],
+            "desc_brief":       "Pencil sketches from my senior year of high school, with touch-up done in Photoshop.",
+            "desc_detailed":    "These sketches were originally drawn with pencil and paper during my senior year of high school. Then, at some point the following year, they were scanned to be touched-up and have the background color changed in Photoshop.",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/scannedHsSketch1.png",
+                "type": "image",
+                "desc": "Multiple pencil sketches depicting rocks and hands in different poses."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     ["scannedHsSketch2"],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         1
+        },
+
+        {
+            "id":               "scannedHsSketch2",
+            "title":            "High School Sketch 2",
+            "category":         "art",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2019-MM-DD",
+            "tags":             ["physicalSketch"],
+            "devTools":         ["pencilAndPaper", "photoshop"],
+            "links":            [],
+            "desc_brief":       "Pencil sketch from my senior year of high school, with touch-up done in Photoshop.",
+            "desc_detailed":    "This sketch was originally drawn with pencil and paper during my senior year of high school. Then, at some point the following year, it was scanned to be touched-up and have the background color changed in Photoshop.",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/scannedHsSketch2_16x9RatioEdit.png",
+                "type": "image",
+                "desc": "A pencil sketch depicting a hand on a desk sketching railroad tracks parallel to a road."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     ["scannedHsSketch1"],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         1
+        },
+
+        {
+            "id":               "handPointerSketch",
+            "title":            "Hand Pointer Sketch",
+            "category":         "art",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-02-25",
+            "tags":             ["digitalSketch"],
+            "devTools":         ["photoshop"],
+            "links":            [],
+            "desc_brief":       "A digital sketch of a pointing hand.",
+            "desc_detailed":    "A colored sketch of a pointing hand, which I then used Photoshop filters to stylize. It's also important to note that, if I remember correctly, the outline for this sketch was actually the result of tracing a picture of my hand.",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/handPointerSketch_cropped.png",
+                "type": "image",
+                "desc": "A digital sketch of a hand pointing."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "podBustsThroughWallSketch",
+            "title":            "Pod Busts Through Wall Sketch",
+            "category":         "art",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-10-13",
+            "tags":             ["digitalSketch"],
+            "devTools":         ["photoshop"],
+            "links":            [],
+            "desc_brief":       "A digital sketch of Pod 042 from <em>NieR: Automata</em> busting through a wall.",
+            "desc_detailed":    "A digital sketch of Pod 042 from <em>NieR: Automata</em> busting through a wall.",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/PodBustsThroughWall.png",
+                "type": "image",
+                "desc": "A sketch of Pod 042 from <em>NieR: Automata</em> busting through a wall."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "eyesSketch",
+            "title":            "Eyes Sketch",
+            "category":         "art",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2020-11-16",
+            "tags":             ["digitalSketch"],
+            "devTools":         ["photoshop"],
+            "links":            [],
+            "desc_brief":       "A digital sketch of an eye.",
+            "desc_detailed":    "A digital sketch of an eye that was drawn during my first year of college.",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/TestEyes2.png",
+                "type": "image",
+                "desc": "A digital sketch of an eye."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         -1
+        },
+
+        {
+            "id":               "jsRaycastEnginePixelArt",
+            "title":            "JavaScript 2.5D Raycasting Engine Pixel Art",
+            "category":         "art",
+            "date_devStart":    "2022-02-23",
+            "date_devEnd":      "2022-08-22",
+            "tags":             ["pixelArt"],
+            "devTools":         ["photoshop", "krita"],
+            "links":            [],
+            "desc_brief":       "Pixel art created for use in my <em>JavaScript 2.5D Raycasting Engine</em> game project.",
+            "desc_detailed":    "Pixel art created for use in my <em>JavaScript 2.5D Raycasting Engine</em> game project.<br><br>Do note that any pixel art used in my JavaScript raycast engine that isn't shown here was most likely not created by me, and I only take credit for the art showcased here. Most, if not all, uncredited pixel art was taken from <em>Wolfenstein 3D</em>.",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/jsRaycastEngineArtImages/jsRaycastPixelArtThumbnail_228x128.png",
+                "type": "image", "imageRendering": "pixelated",
+                "desc": "A showcase of most pixel art created for my JavaScript raycast engine."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/artImages/jsRaycastEngineArtImages/jsRaycastWallTextures.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "Pixel art wall textures of a leafy bush, crate, & rock wall, each having a darker shadow variation."
+                },
+                {
+                    "url": "./assets/images/artImages/jsRaycastEngineArtImages/transparentLeaves.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "A partially transparent variant of the leaves wall texture."
+                },
+                {
+                    "url": "./assets/images/artImages/jsRaycastEngineArtImages/wallLever-upAndDown.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "Sprites of a wall mounted lever, one in an up position and one in a down position."
+                },
+                {
+                    "url": "./assets/images/artImages/jsRaycastEngineArtImages/supportBeam-temp.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "A \"temporary\" sprite of a vertical support beam / column."
+                },
+                {
+                    "url": "./assets/images/artImages/jsRaycastEngineArtImages/levelExit-tunnel-temp.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "A \"temporary\" sprite of a tunnel entrance used to exit/enter a level."
+                },
+                {
+                    "url": "./assets/images/artImages/jsRaycastEngineArtImages/ironBars-temp.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "A \"temporary\" sprite of vertical iron bars."
+                },
+                {
+                    "url": "./assets/images/artImages/jsRaycastEngineArtImages/counter-temp.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "A \"temporary\" sprite of the side of a counter."
+                },
+                {
+                    "url": "./assets/images/artImages/jsRaycastEngineArtImages/tempHealthPack-allFrames.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "\"Temporary\" sprites for an animated health pack item."
+                },
+                {
+                    "url": "./assets/images/artImages/jsRaycastEngineArtImages/gibs-test_cropped.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "A \"temporary\" sprite of a \"gibs\" (giblets) particle which is spawned when an enemy dies."
+                }
+            ],
+            "relatedWorks":     ["jsRaycastEngine"],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "projectUndeadStrategyPixelArt",
+            "title":            "Project Undead Strategy Pixel Art",
+            "category":         "art",
+            "date_devStart":    "2022-09-19",
+            "date_devEnd":      "2022-12-01",
+            "tags":             ["pixelArt"],
+            "devTools":         ["krita"],
+            "links":            [],
+            "desc_brief":       "A collection of pixel art created for use in my <em>Project Undead Strategy</em> game project.",
+            "desc_detailed":    "A collection of pixel art created for use in my <em>Project Undead Strategy</em> game project.",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/projectUndeadStrategyArtImages/projectUndeadStrategyPixelArt_thumbnail.png",
+                "type": "image", "imageRendering": "pixelated",
+                "desc": "Thumbnail image for \"Project Undead Strategy Pixel Art\", depicting the combat units."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/artImages/projectUndeadStrategyArtImages/playerCommander-16px-V1.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The player commander unit."
+                },
+                {
+                    "url": "./assets/images/artImages/projectUndeadStrategyArtImages/skeletalMage-16px-V1.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The player 'skeletal mage' unit."
+                },
+                {
+                    "url": "./assets/images/artImages/projectUndeadStrategyArtImages/skeletalVulture-16px-V1.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The player 'skeletal vulture' unit."
+                },
+                {
+                    "url": "./assets/images/artImages/projectUndeadStrategyArtImages/skeleton-16px-V1.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The player 'skeleton' unit."
+                },
+                {
+                    "url": "./assets/images/artImages/projectUndeadStrategyArtImages/enemyCommander-16px-V1.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The enemy commander unit."
+                },
+                {
+                    "url": "./assets/images/artImages/projectUndeadStrategyArtImages/enemyKnight-16px-V1.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The enemy knight unit."
+                },
+                {
+                    "url": "./assets/images/artImages/projectUndeadStrategyArtImages/equipmentIcons.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The player equipment icons, used in the equipment menu."
+                },
+                {
+                    "url": "./assets/images/artImages/projectUndeadStrategyArtImages/tileOverlaysV1.1_condensed.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The tile overlays used to depict selected tile, attack range, movement range, unit movement path, etc."
+                },
+                {
+                    "url": "./assets/images/artImages/projectUndeadStrategyArtImages/placeholderSpriteMap.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The grass, dirt, gravel, and placeholder tile sprites used to create the ground."
+                }
+            ],
+            "relatedWorks":     ["projectUndeadStrategy"],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "robomationPixelArt",
+            "title":            "Robomation Pixel Art",
+            "category":         "art",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-04-23",
+            "tags":             ["pixelArt"],
+            "devTools":         ["photoshop"],
+            "links":            [],
+            "desc_brief":       "Pixel art created for a fake game called \"Robomation\".",
+            "desc_detailed":    "This is a collection of pixel art I created for a fake game called \"Robomation\".",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/robomationPixelArt.png",
+                "type": "image", "imageRendering": "pixelated",
+                "desc": "A showcase of all sprites on a pixelated grass background."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/artImages/robomationPixelArt_tentacleEyeImprovements.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "A showcase of an improved version of the tentacle eye sprite I did about a year after the original."
+                }
+            ],
+            "relatedWorks":     ["robomationLogoAnimation"],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "minesweeperPixelArtAssets",
+            "title":            "Minesweeper Pixel Art Assets",
+            "category":         "art",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-02-06",
+            "tags":             ["pixelArt"],
+            "devTools":         ["photoshop"],
+            "links":            [],
+            "desc_brief":       "Pixel art created for a minesweeper game I never actually created.",
+            "desc_detailed":    "This is a collection of pixel art assets I created for a minesweeper game I was going to make to practice programming, but never actually did.",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/minesweeperPixelArtAssets.png",
+                "type": "image", "imageRendering": "pixelated",
+                "desc": "A showcase of all the minesweeper sprites."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         1
+        },
+
+        {
+            "id":               "globeVectorArt",
+            "title":            "Globe Vector Art",
+            "category":         "art",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-06-26",
+            "tags":             [],
+            "devTools":         ["illustrator"],
+            "links":            [],
+            "desc_brief":       "Vector art of a simplistic globe.",
+            "desc_detailed":    "Vector art of a simplistic globe made with Adobe Illustrator.",
+            "img_thumbnail":    {
+                "url": "./assets/images/artImages/globeVectorArt.png",
+                "type": "image",
+                "desc": "Vector art of a simplistic globe."
+            },
+            "slideshowSlides":  [],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        }
+    ],
+
+
+
+
+    "animation": [
+        {
+            "id":               "introToAnimationFlipbook",
+            "title":            "Intro to Animation - Flipbook Animation",
+            "category":         "animation",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-10-01",
+            "tags":             ["physicalSketch"],
+            "devTools":         ["pencilAndPaper", "afterEffects"],
+            "links":            [{
+                "url": "https://youtu.be/lics-P4BvxQ",
+                "type": "webPage", "absoluteUrl": true,
+                "displayName": "Open On YouTube"
+            }],
+            "desc_brief":       "A flipbook/frame animation drawn with pencil on notecards.",
+            "desc_detailed":    "A flipbook/frame animation drawn with pencil on notecards, which was created for my <em>Intro to Animation</em> class. To create the video, the individual notecards were scanned and then edited together with <em>Adobe After Effects</em>.<br><br>This animation was unfortunately never fully finished due to simply running out of time. Though I had also underestimated how long the animation's duration would be, as I didn't have a good sense of what the duration between key frames would be, given this was the first time I had ever created a frame animation.",
+            "img_thumbnail":    {
+                "url": "./assets/images/animationImages/introToAnimationFlipbook_thumbnail.png",
+                "type": "image",
+                "desc": "Animation thumbnail image."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "lics-P4BvxQ",
+                    "type": "youtubeVideo",
+                    "desc": "The animation uploaded onto YouTube."
+                },
+                {
+                    "url": "./assets/images/animationImages/IntroToAnimation-FlipbookStoryboard.jpg",
+                    "type": "image",
+                    "desc": "The animation's original story board."
+                }
+            ],
+            "relatedWorks":     ["introToAnimationStopMotion", "introToAnimationDigital"],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         1
+        },
+
+        {
+            "id":               "introToAnimationStopMotion",
+            "title":            "Intro to Animation - Stop Motion Animation",
+            "category":         "animation",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-11-06",
+            "tags":             [],
+            "devTools":         ["afterEffects"],
+            "links":            [{
+                "url": "https://youtu.be/dMbzrvBFPUI",
+                "type": "webPage", "absoluteUrl": true,
+                "displayName": "Open On YouTube"
+            }],
+            "desc_brief":       "A stop motion animation made with photos of clay, wire, cardboard, paper, toothpicks, and other physical mediums.",
+            "desc_detailed":    "A stop motion animation made with photos of clay, wire, cardboard, paper, toothpicks, and other physical mediums, which was created for my <em>Intro to Animation</em> class. To create the video, the photos were then edited together with <em>Adobe After Effects</em>.<br><br>Due to spending far too much time on preparation for the animation <span class='subtle'>(creating the props/set & planning it out)</span>, this animation is something that was made in a rather short time frame. And, due to it being rushed, along with having never made a stop motion animation before, I ended up not being able to fulfill my original vision for the animation. Other than the time constraint, another factor that lead to deviating from the storyboard was the clay being heated up under the lighting conditions, thus not being able to hold it's shape as well as I had expected.<br><br>Originally I had planned for the ending frame to be near identical to the first frame. The idea being that, despite the art moving around, they would morph into identical copies of other pieces to replace each other. But, despite needing to stray from my original plans, I still feel the animation turned out fairly decent for my first <span class='subtle'>(and only)</span> attempt at stop motion.",
+            "img_thumbnail":    {
+                "url": "./assets/images/animationImages/introToAnimationStopMotion_thumbnail.png",
+                "type": "image",
+                "desc": "Animation thumbnail image."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "dMbzrvBFPUI",
+                    "type": "youtubeVideo",
+                    "desc": "The animation uploaded onto YouTube."
+                },
+                {
+                    "url": "./assets/images/animationImages/IntroToAnimation-StopMotionStoryboard.png",
+                    "type": "image",
+                    "desc": "The animation's original story board."
+                }
+            ],
+            "relatedWorks":     ["introToAnimationFlipbook", "introToAnimationDigital"],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "introToAnimationDigital",
+            "title":            "Intro to Animation - Digital Animation",
+            "category":         "animation",
+            "date_devStart":    "2021-12-14",
+            "date_devEnd":      "2021-12-18",
+            "tags":             [],
+            "devTools":         ["blender", "photoshop"],
+            "links":            [{
+                "url": "https://youtu.be/DHoqmbScQ8g",
+                "type": "webPage", "absoluteUrl": true,
+                "displayName": "Open On YouTube"
+            }],
+            "desc_brief":       "A digital 3D animation made with <em>Blender</em>.",
+            "desc_detailed":    "A digital 3D animation made with <em>Blender</em> that was created for my <em>Intro to Animation</em> class. This animation had a particularly rough production due to me somehow accidentally overwriting the source file mid way through creating it. This unfortunately led to the end product shown here being shortened and made in a rushed to meet the project deadline.",
+            "img_thumbnail":    {
+                "url": "./assets/images/animationImages/introToAnimationDigital_thumbnail.png",
+                "type": "image",
+                "desc": "Animation thumbnail image."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "DHoqmbScQ8g",
+                    "type": "youtubeVideo",
+                    "desc": "The animation uploaded onto YouTube."
+                },
+                {
+                    "url": "./assets/images/animationImages/IntroToAnimation-DigitalStoryboard.png",
+                    "type": "image",
+                    "desc": "The animation's original story board."
+                }
+            ],
+            "relatedWorks":     ["introToAnimationFlipbook", "introToAnimationStopMotion"],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "untitled3dAnimationProject",
+            "title":            "Untitled 3D Animation Project",
+            "category":         "animation",
+            "date_devStart":    "2021-02-10",
+            "date_devEnd":      "2021-02-22",
+            "tags":             [],
+            "devTools":         ["afterEffects", "photoshop"],
+            "links":            [{
+                "url": "https://youtu.be/gQgeUMEKeT0",
+                "type": "webPage", "absoluteUrl": true,
+                "displayName": "Open On YouTube"
+            }],
+            "desc_brief":       "A digital 3D animation made with <em>Adobe After Effects</em>.",
+            "desc_detailed":    "A digital 3D animation made with <em>Adobe After Effects</em> that was created for my <em>3D Animation I</em> class. Its a bit short and simple <span class='subtle'>(largely due to me spending far too much time on the beginning portion and creating the assets for it)</span>, but for my first 3D animation in <em>Adobe After Effects</em>, I still feel it turned out fairly decent.",
+            "img_thumbnail":    {
+                "url": "./assets/images/animationImages/untitled3dAnimationProject_thumbnail.png",
+                "type": "image",
+                "desc": "Animation thumbnail image."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "gQgeUMEKeT0",
+                    "type": "youtubeVideo",
+                    "desc": "Version 2 of the animation uploaded onto YouTube."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "pixelArtManaOrbAnimation",
+            "title":            "Pixel Art Mana Orb Animation",
+            "category":         "animation",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-10-17",
+            "tags":             ["pixelArt"],
+            "devTools":         ["photoshop"],
+            "links":            [
+                {
+                    "url": "./assets/images/animationImages/ManaOrb-AnimationV2.gif",
+                    "type": "download",
+                    "displayName": "Download GIF"
+                }
+            ],
+            "desc_brief":       "A simple pixel art animation of a \"mana orb\".",
+            "desc_detailed":    "A simple pixel art animation of a \"mana orb\" made with <em>Adobe Photoshop</em>.<br>I was inspired to create this simple little animation because of a game called <em>Rift Wizard</em>. <em>Rift Wizard</em> features a similar looking \"mana orb\", but it just has a simple blinking animation with no motion to it, so I decided to create my own animation to replace it, and this was the end result.",
+            "img_thumbnail":    {
+                "url": "./assets/images/animationImages/ManaOrb-AnimationV2.gif",
+                "type": "image", "imageRendering": "pixelated",
+                "desc": "A simple animated pixel art \"mana orb\"."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "./assets/images/animationImages/pixelArtManaOrbAnimation_frames.png",
+                    "type": "image", "imageRendering": "pixelated",
+                    "desc": "The individual frames of an earlier version of the animation."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [],
+            "enabled":          true,
+            "priority":         -1
+        },
+
+        {
+            "id":               "robomationLogoAnimation",
+            "title":            "Animated Robomation Logo",
+            "category":         "animation",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "2021-06-02",
+            "tags":             [],
+            "devTools":         ["afterEffects", "photoshop"],
+            "links":            [{
+                "url": "https://youtu.be/g6sqyF6yenw",
+                "type": "webPage", "absoluteUrl": true,
+                "displayName": "Open On YouTube"
+            }],
+            "desc_brief":       "An animated title logo created for a fake game called \"Robomation\".",
+            "desc_detailed":    "An animated title logo created for a fake game called \"Robomation\".<br>This was created as part of an assignment where I created a fake game trailer, and while the trailer itself isn't something worth showing off, I was fairly happy with this simple little animated title logo.",
+            "img_thumbnail":    {
+                "url": "./assets/images/animationImages/robomationLogo.png",
+                "type": "image",
+                "desc": "Static image of the animated logo."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "g6sqyF6yenw",
+                    "type": "youtubeVideo",
+                    "desc": "The animation uploaded onto YouTube."
+                }
+            ],
+            "relatedWorks":     ["robomationPixelArt"],
+            "credits":          [
+                {
+                    "url": "https://fonts.adobe.com/fonts/scandia",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Scandia Line Stencil\" designed by Eric Olson, from Process Type Foundry.",
+                    "desc": "The font used in this title logo, which was downloaded through <em>Adobe Fonts</em>."
+                }
+            ],
+            "enabled":          true,
+            "priority":         -1
+        }
+    ],
+
+
+
+
+    "webDesign": [
+    ],
+
+
+
+
+    "misc": [
+        {
+            "id":               "tdAudioVisualizer",
+            "title":            "TouchDesigner Audio Visualizer",
+            "category":         "misc",
+            "date_devStart":    "2021-11-24",
+            "date_devEnd":      "2021-12-14",
+            "tags":             [],
+            "devTools":         ["touchDesigner"],
+            "links":            [
+                {
+                    "url": "https://youtu.be/MJbiRM83tWo",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "Open Showcase On YouTube"
+                }
+            ],
+            "desc_brief":       "A customizable audio visualizer created with TouchDesigner.",
+            "desc_detailed":    "A customizable audio visualizer created with TouchDesigner for my <em>Principles of Interactive Art</em> class. This project had originally started as a more simple audio visualizer, and was then expanded upon with multiple visualizer types and color options that can be changed via an overlaid interface.",
+            "img_thumbnail":    {
+                "url": "./assets/images/miscImages/tdAudioVisualizerScreenshot2.png",
+                "type": "image",
+                "desc": "Audio visualizer thumbnail."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "MJbiRM83tWo",
+                    "type": "youtubeVideo",
+                    "desc": "YouTube video showcasing the audio visualizer."
+                },
+                {
+                    "url": "./assets/images/miscImages/tdAudioVisualizerScreenshot1.png",
+                    "type": "image",
+                    "desc": "A screenshot of the displayed video."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [
+                {
+                    "url": "https://docs.derivative.ca/",
+                    "type": "webPage","absoluteUrl": true,
+                    "displayName": "Touch Designer's Official Documentation"
+                },
+                {
+                    "url": "https://youtu.be/5YOhqpSc40Y",
+                    "type": "webPage", "absoluteUrl": true,
+                    "displayName": "\"Interim\" by Nokae; Uploaded by The Arcadium.",
+                    "desc": "This is the song used in the video showcasing the audio visualizer."
+                }
+            ],
+            "enabled":          true,
+            "priority":         0
+        },
+
+        {
+            "id":               "tdCurlNoiseProject",
+            "title":            "TouchDesigner Curl Noise Project",
+            "category":         "misc",
+            "date_devStart":    "YYYY-MM-DD",
+            "date_devEnd":      "YYYY-MM-DD",
+            "tags":             [],
+            "devTools":         ["touchDesigner"],
+            "links":            [],
+            "desc_brief":       "A curl noise generative art piece created with TouchDesigner.",
+            "desc_detailed":    "A curl noise generative art piece created with TouchDesigner for my <em>Principles of Interactive Art</em> class. <br> TODO: Find dev date(s).",
+            "img_thumbnail":    {
+                "url": "./assets/images/miscImages/",
+                "type": "image",
+                "desc": "TODO:  Take a screenshot displaying the project."
+            },
+            "slideshowSlides":  [
+                {
+                    "url": "",
+                    "type": "youtubeVideo",
+                    "desc": "TODO: Upload video to YouTube and add link here."
+                },
+                {
+                    "url": "./assets/images/miscImages/",
+                    "type": "image",
+                    "desc": "TODO: Take a screenshot displaying the project."
+                }
+            ],
+            "relatedWorks":     [],
+            "credits":          [
+                {
+                    "url": "https://docs.derivative.ca/",
+                    "absoluteUrl": true, "type": "webPage",
+                    "displayName": "Touch Designer's Official Documentation"
+                }
+            ],
+            "enabled":          false,
+            "priority":         0
+        }
+    ]
+}

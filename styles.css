@@ -1,0 +1,2501 @@
+/*TODO:
+    - Create breakpoints for mobile viewing.
+    - Create separate css file for (font) imports & variables.
+    - Add font-face imports for all static variations of Rubik.
+*/
+
+/*----------------------------------------------------------------|Font-Face Import(s)*/
+@supports font-tech(variations) {
+    @font-face {
+        font-family: "Rubik";
+        src: url("assets/fonts/rubik/Rubik-VariableFont_wght.ttf") format(openType) tech(variations);
+        font-weight: 125 950;
+        font-stretch: 75% 125%;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Rubik";
+        src: url("assets/fonts/rubik/Rubik-Italic-VariableFont_wght.ttf") format(opentype) tech(variations);
+        font-weight: 125 950;
+        font-stretch: 75% 125%;
+        font-style: italic;
+    }
+}
+
+
+/*----------------------------------------------------------------|CSS Variables*/
+:root {
+    --scrollbarWidth: 14px;
+    --scrollbarWidth_thin: 10px;
+    --navbarWidth: 16rem;
+    --mainMaxWidth: 72rem;
+    --imgAspectRatio: 16 / 9;
+    --slideSelectorArrowWidth: 2.5rem;
+    --standardBorderRadius: 0.26rem;
+    --standardLineHeight: 1.6em;
+
+    --td_navbarHover: 256ms;
+    --td_wdHover: 200ms;
+    --td_wdOverlayHover: 384ms;
+    --td_wfpToggle: 800ms;
+    --td_wfpToggle2: 800ms;
+    --td_wfpSlideTransition: 256ms;
+    --td_toggleNavbar: 256ms;
+    --td_btnHover: 256ms;
+    --td_socialLinkHover: 208ms;
+
+    --c_primary: #0094d0;
+    --c_primary_alt: #30547c;
+    --c_secondary: #790010;
+    --c_background: #1a1a1a;
+    --c_background_alt: #202224;
+    --c_surface: #2e2e2e;
+    --c_error: #883036;
+    --c_onPrimary: #000;
+    --c_onSecondary: #000;
+    --c_onBackground: #b2b2b2;
+    --c_onSurface: #b8b8b8;
+    --c_onError: #000;
+
+    --ch_primary: #38b8fc;
+    --ch_primary_alt: #6288c0;
+    --ch_secondary: #a01014;
+    --ch_background: #242424;
+    --ch_background_alt: #282a2e;
+    --ch_surface: #383838;
+    --ch_error: #a63e44;
+    --ch_onPrimary: #111;
+    --ch_onSecondary: #111;
+    --ch_onBackground: #e2e2e2;
+    --ch_onSurface: #eee;
+    --ch_onError: #111;
+
+    --c_imgBg: #121212;
+    --c_link: #4c88c2;
+    --ch_link: #4fb2fa;
+}
+/* Variable Abbreviation Key:
+ - "wd"  = "work display"
+ - "wfp" = "work (display) full preview"
+ - "td"  = "transition delay"
+ - "c"   = "color"
+ - "ch"  = "color - highlight"
+*/
+/* -?-: Rename ch (color-highlight) to cb (color-brighter)? */
+
+
+/* -------- CSS Variables Breakpoint(s) -------- */
+@media only screen and (max-width: 1024px) {
+    :root {
+        --scrollbarWidth: 12px;
+        --scrollbarWidth_thin: 8px;
+        /* --navbarWidth: 14rem; */
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    :root {
+        --scrollbarWidth: 10px;
+        --scrollbarWidth_thin: 6px;
+        --navbarWidth: 18rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    :root {
+        --scrollbarWidth: 8px;
+        --scrollbarWidth_thin: 4px;
+        --navbarWidth: 20rem;
+    }
+}
+
+
+
+
+/*----------------------------------------------------------------|Base HTML & Body*/
+*, *::before, *::after {
+    box-sizing:         border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+html {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    font-size: 16px;
+    color: var(--c_onBackground);
+    background-color: var(--c_background);
+}
+
+
+body {
+    width: 100%; height: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow: hidden;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Rubik', 'Segoe UI', Tahoma, Verdana, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: inherit;
+    background-color: inherit;
+}
+
+
+
+/* -------- Base HTML & Body Breakpoint(s) -------- */
+@media only screen and (max-width: 1440px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+
+
+
+/*----------------------------------------------------------------|Basic Elements*/
+ul {
+    margin: 0;
+    padding-left: 1.6em;
+}
+
+li ul {
+    margin: 0;
+    padding-left: 1em;
+}
+
+
+hr.sub { opacity: 0.6; }
+
+
+
+
+/*----------------------------------------------------------------|Basic Classes*/
+.alignItems {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.unselectable {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.scrollLockedY  { overflow-y: hidden !important; }
+.scrollLockedX  { overflow-x: hidden !important; }
+.scrollLockedXY { overflow:   hidden !important; }
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+/*----------------------------------------------------------------|Scrollbar*/
+::-webkit-scrollbar {
+    width: var(--scrollbarWidth);
+    height: var(--scrollbarWidth);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #161616;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #101010;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #525252;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+}
+
+
+
+
+/*----------------------------------------------------------------|Popup(s)*/
+.popupContainer {
+    z-index: 9999;
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    background-color: #00000020;
+    backdrop-filter:         blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+.popup {
+    z-index: 9998;
+    position: absolute;
+    display: flex;
+    width: 90%; height: auto;
+    /* max-width: max-content; */
+    min-height: 20%;
+    /* max-height: max-content; */
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 1em solid #666; */
+    padding: 1em;
+    flex-flow: column nowrap;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    font-weight: bold;
+    color: var(--c_background);
+    background-color: var(--c_onBackground);
+}
+
+
+.popup_header {
+    font-weight: bold;
+    color: var(--c_error);
+}
+
+
+.popup p {
+    margin: 0.5em 0;
+}
+
+.popup div {
+    margin: 0.5em 0;
+}
+
+
+.btn-closePopup {
+    padding: 0.25em 1em;
+    color: var(--c_background);
+}
+
+
+#mobileApology { display: none; }
+
+
+
+/* -------- Popup Breakpoint(s) -------- */
+@media only screen and (max-width: 800px) {
+    #mobileApology { display: block; }
+}
+
+
+
+
+/*----------------------------------------------------------------|Misc. Elements*/
+button {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+button.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+main a[href] {
+    color: var(--c_link);
+    text-decoration: none;
+}
+
+main a[href]:hover, main a[href]:focus-visible {
+    color: var(--ch_link);
+    text-decoration: underline;
+}
+
+/* main a:hover::after, main a:focus::after {
+    position: absolute;
+    margin-left: 0.5em;
+    background-color: #444;
+    content: " (" attr(href) ")"
+} */
+
+
+
+
+pre {
+    padding: 4px;
+    background-color: var(--c_surface);
+}
+
+code {
+    font-family: Consolas, 'Courier New', Courier, monospace;
+    font-size: 105%;
+    color: var(--c_secondary);
+}
+
+
+
+
+/*----------------------------------------------------------------|Text Classes*/
+todo {
+    color: green !important;
+    background-color: red !important;
+    text-shadow:
+         0      -0.04em 0 white,
+         0.04em -0.04em 0 white,
+         0.04em  0      0 white,
+         0.04em  0.04em 0 white,
+         0       0.04em 0 white,
+        -0.04em  0.04em 0 white,
+        -0.04em  0      0 white,
+        -0.04em -0.04em 0 white !important;
+}
+
+.toDo {
+    color: green !important;
+    background-color: red !important;
+    text-shadow:
+         0      -0.04em 0 white,
+         0.04em -0.04em 0 white,
+         0.04em  0      0 white,
+         0.04em  0.04em 0 white,
+         0       0.04em 0 white,
+        -0.04em  0.04em 0 white,
+        -0.04em  0      0 white,
+        -0.04em -0.04em 0 white !important;
+}
+
+.subtle { opacity: 0.44; }
+
+
+
+.myName {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--c_primary);
+    text-shadow: 0.066em -0.08em 0 var(--c_secondary);
+}
+
+
+
+/* TODO: There has to be a better method to achieve text outlines... */
+.textOutlineBlack2px {
+    text-shadow:
+         0   -2px 0 #000,
+         2px -2px 0 #000,
+         2px  0   0 #000,
+         2px  2px 0 #000,
+         0    2px 0 #000,
+        -2px  2px 0 #000,
+        -2px  0   0 #000,
+        -2px -2px 0 #000;
+}
+.textOutlineBlack0_1em {
+    text-shadow:
+         0     -0.1em 0 #000,
+         0.1em -0.1em 0 #000,
+         0.1em  0     0 #000,
+         0.1em  0.1em 0 #000,
+         0      0.1em 0 #000,
+        -0.1em  0.1em 0 #000,
+        -0.1em  0     0 #000,
+        -0.1em -0.1em 0 #000;
+}
+
+
+
+
+/*----------------------------------------------------------------|Navbar*/
+#navbar {
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    width: var(--navbarWidth);
+    height: 100%;
+    top: 0; right: 0;
+    overflow: hidden;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    background-color: var(--c_surface);
+    /* box-shadow: -1rem 0 1rem #00000028; */
+}
+
+
+/* Hidden navbar transitions. */
+html.optionalAnimations #navbar {
+    transition:         width var(--td_toggleNavbar), right var(--td_toggleNavbar);
+    -webkit-transition: width var(--td_toggleNavbar), right var(--td_toggleNavbar);
+    -moz-transition:    width var(--td_toggleNavbar), right var(--td_toggleNavbar);
+    -ms-transition:     width var(--td_toggleNavbar), right var(--td_toggleNavbar);
+    -o-transition:      width var(--td_toggleNavbar), right var(--td_toggleNavbar);
+}
+
+
+
+#navbar_body {
+    width: 100%; height: auto;
+}
+
+
+
+
+.navbar_child {
+    display: flex;
+    height: 2.24em;
+    padding: 4px 0.2em 4px 2px;
+    border-right: 0.12em solid #00000000;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: end;
+    text-align: right;
+    font-size: 1.8rem;
+    font-weight: normal;
+    text-decoration: none;
+    color: var(--c_onSurface);
+
+    transition:         color var(--td_navbarHover), background-color var(--td_navbarHover);
+    -webkit-transition: color var(--td_navbarHover), background-color var(--td_navbarHover);
+    -moz-transition:    color var(--td_navbarHover), background-color var(--td_navbarHover);
+    -ms-transition:     color var(--td_navbarHover), background-color var(--td_navbarHover);
+    -o-transition:      color var(--td_navbarHover), background-color var(--td_navbarHover);
+}
+
+
+.navbar_child:hover, .navbar_child:focus-visible {
+    border-right: 0.12em solid var(--c_primary);
+    color: var(--c_primary);
+    background-color: #363a3c;
+    text-shadow: 0 0 0.1em #52a6c880;
+}
+
+
+.navbar_hr {
+    width: 100%; height: 2px;
+    margin: 6px 0 6px 0;
+    border-width: 0;
+    background-color: #585c60;
+}
+
+
+.navbar_child.currentPageLink {
+    font-weight: bold;
+    opacity: 28%;
+    text-shadow: 0 0 0.2em #a0a0a060;
+    /* cursor: pointer; */
+}
+
+.navbar_child.currentPageLink:hover, .navbar_child.currentPageLink:focus-visible {
+    border-right: 0.12em solid var(--c_secondary);
+    color: var(--ch_onSurface);
+    background-color: #20222690;
+    opacity: 32%;
+}
+
+
+
+/* -------- Navbar Breakpoint(s) -------- */
+@media only screen and (max-width: 1024px) {
+    .navbar_child { font-size: 2rem; }
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar_child { font-size: 2.2rem; }
+}
+
+@media only screen and (max-width: 425px) {
+    .navbar_child { font-size: 2.6rem; }
+}
+
+
+
+
+/*----------------------------------------------------------------|Navbar Header*/
+#navbar_header {
+    display: block;
+    height: 5.6em;
+    justify-content: center;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--ch_onSurface);
+}
+
+
+
+#navbar_headerDiv {
+    display: flex;
+    width: 100%; height: 100%;
+    padding: 2px 12px 0 12px;
+    flex-direction: column;
+}
+
+
+#navbar_headerDiv span {
+    display: flex;
+    width: 100%; height: 50%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 112%;
+}
+
+#navbar_headerDiv span:nth-of-type(1) {
+    text-align: left;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 54%;
+}
+
+#navbar_headerDiv span:nth-of-type(2) {
+    text-align: right;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    height: 46%;
+}
+
+
+
+/* -------- Navbar Header Breakpoint(s) -------- */
+/* @media only screen and (max-width: 1024px) {
+    #navbar_headerDiv span { font-size: 1.8rem; }
+} */
+
+@media only screen and (max-width: 800px) {
+    /* #navbar_header { height: 4.8em; } */
+
+    #navbar_headerDiv span {
+        font-size: 2.2rem;
+        line-height: 128%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #navbar_headerDiv span { font-size: 2.4rem; }
+}
+
+
+
+
+/*----------------------------------------------------------------|Navbar - Toggle Button*/
+.navbarToggleBtn {
+    z-index: 1010;
+    position: fixed;
+    display: flex;
+    width: auto; height: 1.1em;
+    bottom: 0.82rem; right: 1.4rem;
+    padding: 0;
+    border: none;
+    border-radius: 0.46em;
+    aspect-ratio: 1;
+    overflow: hidden;
+
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--c_onBackground);
+    background-color: #00000000;
+    /* text-shadow:
+         0      -0.04em 0 var(--c_secondary),
+         0.04em -0.04em 0 var(--c_secondary),
+         0.04em  0      0 var(--c_secondary),
+         0.04em  0.04em 0 var(--c_secondary),
+         0       0.04em 0 var(--c_secondary),
+        -0.04em  0.04em 0 var(--c_secondary),
+        -0.04em  0      0 var(--c_secondary),
+        -0.04em -0.04em 0 var(--c_secondary); */
+    cursor: pointer;
+}
+/* -?-: Find a better position for the button? */
+/* -?-: Use an image instead of text for the toggle button? */
+
+
+.navbarToggleBtn:hover, .navbarToggleBtn:focus-visible {
+    font-weight: 600;
+    color: var(--c_primary);
+    background-color: #00000010;
+    opacity: 100%;
+}
+
+
+/* Navbar Toggle Button - Hidden Navbar Styling */
+body.hideNavbar .navbarToggleBtn {
+    /* top: 0.8rem;
+    bottom: unset; */
+    opacity: 72%;
+    transform: rotateY(-180deg);
+}
+
+
+/* Navbar toggle button hover and hide navbar transitions. */
+html.optionalAnimations .navbarToggleBtn {
+    transition:         font-weight var(--td_btnHover), color var(--td_btnHover),
+        background-color var(--td_btnHover), opacity var(--td_btnHover), transform var(--td_toggleNavbar);
+    -webkit-transition: font-weight var(--td_btnHover), color var(--td_btnHover),
+        background-color var(--td_btnHover), opacity var(--td_btnHover), transform var(--td_toggleNavbar);
+    -moz-transition:    font-weight var(--td_btnHover), color var(--td_btnHover),
+        background-color var(--td_btnHover), opacity var(--td_btnHover), transform var(--td_toggleNavbar);
+    -ms-transition:     font-weight var(--td_btnHover), color var(--td_btnHover),
+        background-color var(--td_btnHover), opacity var(--td_btnHover), transform var(--td_toggleNavbar);
+    -o-transition:      font-weight var(--td_btnHover), color var(--td_btnHover),
+        background-color var(--td_btnHover), opacity var(--td_btnHover), transform var(--td_toggleNavbar);
+}
+
+
+
+
+/*----------------------------------------------------------------|Main*/
+main {
+    z-index: 100;
+    position: absolute;
+    display: block;
+    width: calc(100% - var(--navbarWidth));
+    height: 100%;
+    min-height: 100%;
+    top: 0; left: 0;
+    overflow-x: hidden; overflow-y: auto;
+    /* scrollbar-gutter: stable; */
+    background-color: var(--c_background);
+}
+/* Note: Padding on main makes footer not align properly. */
+
+
+#main_header {
+    z-index: 120;
+    display: flex;
+    width: 100%; height: 6rem;
+    max-width: none;
+    margin: 0 0 2rem 0;
+    /* padding: 1em; */
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: var(--c_onPrimary);
+    background-color: var(--c_primary);
+    box-shadow: 0 1rem 1rem 0 #00000080;
+}
+
+
+#main_loadingOverlay {
+    z-index: 9999;
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    background-color: inherit;
+}
+
+
+main div {
+    z-index: 101;
+}
+
+
+
+html.optionalAnimations main {
+    transition:         width var(--td_toggleNavbar);
+    -webkit-transition: width var(--td_toggleNavbar);
+    -moz-transition:    width var(--td_toggleNavbar);
+    -ms-transition:     width var(--td_toggleNavbar);
+    -o-transition:      width var(--td_toggleNavbar);
+}
+
+
+
+
+/* Hidden Navbar Styling */
+body.hideNavbar #navbar {
+    right: calc(0rem - var(--navbarWidth));
+    box-shadow: none;
+}
+
+body.hideNavbar main {
+    width: 100%;
+}
+
+
+
+/* -------- Main Breakpoint(s) -------- */
+@media only screen and (max-width: 800px) {
+    /* This allows the navbar to be on top of the main section, rather than beside it. */
+    main { width: 100%; }
+}
+
+
+
+
+/*----------------------------------------------------------------|Footer*/
+/* TODO: Currently, javascript is being used to set the position style, find a way to achieve the same effect with pre css.
+Perhaps I should simply create a div that will fill in any space if main's content doesn't extend past the window height.
+Note: If the footer position is going to be absolute, then having the display set to flex by default is preferable. */
+footer {
+    position: absolute;
+    /* display: flex; */
+    display: none;
+    width: 100%; height: fit-content;
+    min-height: 4.6rem;
+    bottom: 0;
+    margin-top: auto;
+    padding: 0.5rem 1rem;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    color: var(--c_onPrimary);
+    background-color: var(--c_primary_alt);
+}
+
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--c_onPrimary);
+}
+
+
+
+
+/*----------------------------------------------------------------|Work Categories Container*/
+/* Contains each '.workCatContainer'. */
+#workCategoriesContainer {
+    z-index: 200;
+    width: 100%;
+    max-width: var(--mainMaxWidth);
+    margin: auto;
+    padding: 0 1rem;
+}
+
+
+
+/* Buttons which collapse / expand their respective '.workCatContainer' */
+.workCatBtn {
+    z-index: 202;
+    width: 100%; height: max-content;
+    margin-top: 0.8em;
+    padding: 0.1em 0.6em;
+    border: none;
+    border-bottom: 0.1rem solid var(--c_secondary);
+    text-align: left;
+    font-size: 1.64rem;
+    font-weight: normal;
+    opacity: 80%;
+    color: var(--c_onBackground);
+    background-color: #04040416;
+    text-shadow: 0 -0.12em 0.1em #000;
+    cursor: pointer;
+}
+
+
+html.optionalAnimations .workCatBtn {
+    transition:         font-weight 256ms, text-shadow 512ms, color 256ms, background 256ms, opacity 256ms;
+    -webkit-transition: font-weight 256ms, text-shadow 512ms, color 256ms, background 256ms, opacity 256ms;
+    -moz-transition:    font-weight 256ms, text-shadow 512ms, color 256ms, background 256ms, opacity 256ms;
+    -ms-transition:     font-weight 256ms, text-shadow 512ms, color 256ms, background 256ms, opacity 256ms;
+    -o-transition:      font-weight 256ms, text-shadow 512ms, color 256ms, background 256ms, opacity 256ms;
+}
+
+
+.workCatBtn:hover, .workCatBtn:focus-visible {
+    font-weight: 550;
+    color: var(--ch_onBackground);
+}
+
+
+.workCatBtn.active {
+    opacity: 100%;
+    color: var(--ch_onBackground);
+    background-color: #00000000;
+    text-shadow: 0 0.12em 0.1em #000;
+}
+
+
+.workCatBtn.active:hover, .workCatBtn.active:focus-visible {
+    background-color: #04040416;
+}
+
+
+
+
+/* Container for workDisplays of a specific category. */
+.workCatContainer {
+    z-index: 210;
+    display: grid;
+    margin: 0 0 2.6rem;
+    padding: 2px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: max-content;
+    text-align: center;
+    justify-content: center;
+    /* background-color: #0a0a0a24; */
+}
+
+
+.workCatContainer.collapsed {
+    display: none;
+}
+
+
+
+/* @media only screen and (max-width: 800px) { */
+@media only screen and (max-width: 1024px) {
+    .workCatContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+
+/*----------------------------------------------------------------|Work Display*/
+/* Displays a single work (project, art, etc.). */
+.workDisplayContainer {
+    z-index: 220;
+    position: relative;
+    display: flex;
+    aspect-ratio: var(--imgAspectRatio);
+    width: auto; height: auto;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    /* background-color: #00000040; */
+    pointer-events: none;
+}
+
+
+
+
+.workDisplay {
+    z-index: 221;
+    position: relative;
+    display: flex;
+    /* width: 90%; height: 90%; */
+    width: calc(100% - 2rem); height: calc(100% - 1.125rem);
+    aspect-ratio: var(--imgAspectRatio);
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #00000000;
+    box-shadow: 0.54em 0.46em 0.4em 0.2em #00000090;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+
+html.optionalAnimations .workDisplay {
+    transition:         width var(--td_wdHover), height var(--td_wdHover), box-shadow var(--td_wdOverlayHover);
+    -webkit-transition: width var(--td_wdHover), height var(--td_wdHover), box-shadow var(--td_wdOverlayHover);
+    -moz-transition:    width var(--td_wdHover), height var(--td_wdHover), box-shadow var(--td_wdOverlayHover);
+    -ms-transition:     width var(--td_wdHover), height var(--td_wdHover), box-shadow var(--td_wdOverlayHover);
+    -o-transition:      width var(--td_wdHover), height var(--td_wdHover), box-shadow var(--td_wdOverlayHover);
+}
+
+
+.workDisplay:hover, .workDisplay:focus-visible {
+    width: 100%; height: 100%;
+    box-shadow: 0 0 1em 0 #ffffff18;
+    /* border: 1px solid var(--c_onBackground); */
+}
+
+
+
+.workDisplay_title {
+    z-index: 226;
+    position: absolute;
+    width: max-content; height: auto;
+    max-width: 100%; max-height: 100%;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    padding: 0.2em 0.6rem;
+    overflow: hidden;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-overflow: ellipsis;
+    color: white;
+    background-color: #00000000;
+    /* mix-blend-mode: difference; */
+    pointer-events: none;
+}
+
+
+html.optionalAnimations .workDisplay_title {
+    transition:         padding var(--td_wdHover), background-color var(--td_wdOverlayHover);
+    -webkit-transition: padding var(--td_wdHover), background-color var(--td_wdOverlayHover);
+    -moz-transition:    padding var(--td_wdHover), background-color var(--td_wdOverlayHover);
+    -ms-transition:     padding var(--td_wdHover), background-color var(--td_wdOverlayHover);
+    -o-transition:      padding var(--td_wdHover), background-color var(--td_wdOverlayHover);
+}
+
+
+.workDisplay:hover .workDisplay_title,
+.workDisplay:focus-visible .workDisplay_title {
+    max-height: 50%;
+    padding-right: 1.6rem; padding-left: 1.6rem;
+    /* Insure padding right & left equals default plus half the amount being subtracted in width of .workDisplay. */
+    background-color: #0e0e0ec0;
+    mix-blend-mode: normal;
+}
+
+
+
+.workDisplay_img {
+    z-index: 222;
+    position: absolute;
+    /* aspect-ratio: var(--imgAspectRatio); */
+    width: 100%; height: 100%;
+    margin: 0;
+    background-color: var(--c_imgBg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+.workDisplay_overlay {
+    z-index: 225;
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    margin: 0;
+    background-color: #0000004a;
+    opacity: 0%;
+    pointer-events: none;
+}
+
+
+html.optionalAnimations .workDisplay_overlay {
+    transition:         opacity var(--td_wdOverlayHover)/*, backdrop-filter var(--td_wdOverlayHover)*/;
+    -webkit-transition: opacity var(--td_wdOverlayHover)/*, backdrop-filter var(--td_wdOverlayHover)*/;
+    -moz-transition:    opacity var(--td_wdOverlayHover)/*, backdrop-filter var(--td_wdOverlayHover)*/;
+    -ms-transition:     opacity var(--td_wdOverlayHover)/*, backdrop-filter var(--td_wdOverlayHover)*/;
+    -o-transition:      opacity var(--td_wdOverlayHover)/*, backdrop-filter var(--td_wdOverlayHover)*/;
+}
+
+
+.workDisplay:hover .workDisplay_overlay,
+.workDisplay:focus-visible .workDisplay_overlay {
+    opacity: 100%;
+}
+
+html.optionalAnimations .workDisplay:hover .workDisplay_overlay,
+html.optionalAnimations .workDisplay:focus-visible .workDisplay_overlay {
+    backdrop-filter:         blur(1px) grayscale(30%);
+    -webkit-backdrop-filter: blur(1px) grayscale(30%);
+
+}
+
+
+
+.workDisplay_descContainer {
+    position: absolute;
+    width: 100%; height: auto;
+    max-height: 50%;
+    bottom: 0; left: 0;
+    padding: 0 0 0.25rem;
+    font-size: 0.9rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    color: #d0d0d0;
+    text-shadow: 0.1em 0.12em 0.06em black;
+}
+
+
+html.optionalAnimations .workDisplay_descContainer {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    transition:         padding var(--td_wdHover), filter var(--td_wdOverlayHover);
+    -webkit-transition: padding var(--td_wdHover), filter var(--td_wdOverlayHover);
+    -moz-transition:    padding var(--td_wdHover), filter var(--td_wdOverlayHover);
+    -ms-transition:     padding var(--td_wdHover), filter var(--td_wdOverlayHover);
+    -o-transition:      padding var(--td_wdHover), filter var(--td_wdOverlayHover);
+}
+
+
+.workDisplay:hover .workDisplay_descContainer,
+.workDisplay:focus-visible .workDisplay_descContainer {
+    padding-right: 1rem; padding-left: 1rem;
+    /* Insure padding right & left equals default plus half the amount being subtracted in width of .workDisplay. */
+}
+
+html.optionalAnimations .workDisplay:hover .workDisplay_descContainer,
+html.optionalAnimations .workDisplay:focus-visible .workDisplay_descContainer {
+    filter: none;
+    -webkit-filter: none;
+}
+
+
+
+/* -------- Work Cat. Container & Display Breakpoint(s) -------- */
+/* @media only screen and (max-width: 800px) { */
+@media only screen and (max-width: 1024px) {
+    /* .workDisplayContainer { width: 50%; } */
+
+    .workDisplay_title {
+        font-size: 1.4rem;
+    }
+
+    .workDisplay_overlay {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+/*----------------------------------------------------------------|Work Display Full Preview*/
+/* Default Work Display Element Changes */
+.workDisplayContainer.fullPreview .workDisplay {
+    display: none;
+}
+
+
+
+.workFullPreviewContainer {
+    z-index: 600;
+    display: none;
+    overflow-x: hidden; overflow-y: hidden;
+    border: 0.2rem solid var(--c_background);
+    scroll-behavior: smooth;
+}
+
+.workFullPreviewContainer.active {
+    z-index: 600;
+    position: absolute;
+    display: block;
+    overflow-y: scroll;
+    background-color: var(--c_background_alt);
+}
+
+
+
+.workFullPreview {
+    z-index: 601;
+    position: relative;
+    width: 100%; height: auto;
+    top: 0; left: 0;
+    padding: 0 1rem;
+    overflow: hidden;
+}
+
+
+
+
+/* Work Display Full Preview - Close Button */
+.wfp_closeBtn {
+    z-index: 698;
+    position: fixed;
+    display: flex;
+    width: auto; height: 2.26rem;
+    top: 0.8rem; right: calc(var(--navbarWidth) + 1.8rem);
+    padding: 0;
+    border: none;
+    aspect-ratio: 1;
+    overflow: hidden;
+
+    font-size: 2.26rem;
+    font-weight: 400;
+    color: var(--c_onBackground);
+    background-color: #00000000;
+    opacity: 80%;
+    cursor: pointer;
+}
+/* -?-: Find a better way to set the position of the close button? */
+
+
+.wfp_closeBtn:hover, .wfp_closeBtn:focus-visible {
+    opacity: 100%;
+}
+
+
+
+.wfp_closeBtn svg {
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    border: none;
+}
+
+.wfp_closeBtn svg path {
+    z-index: 699;
+    display: inline;
+    stroke-width: 14px;
+    stroke-linecap: round;
+    stroke: var(--c_onBackground);
+}
+
+.wfp_closeBtn svg path.outline {
+    z-index: 698;
+    stroke-width: 29px;
+    stroke: var(--c_secondary);
+}
+
+
+.wfp_closeBtn:hover svg path, .wfp_closeBtn:focus-visible svg path {
+    stroke: var(--c_secondary);
+}
+
+.wfp_closeBtn:hover svg path.outline, .wfp_closeBtn:focus-visible svg path.outline {
+    stroke-width: 32px;
+}
+
+
+
+/* Hidden Navbar Styling */
+body.hideNavbar .wfp_closeBtn {
+    right: 1.8rem;
+}
+
+
+
+/* Work full preview close button hover & hidden navbar transitions. */
+html.optionalAnimations .wfp_closeBtn {
+    transition:         right var(--td_toggleNavbar), opacity var(--td_btnHover);
+    -webkit-transition: right var(--td_toggleNavbar), opacity var(--td_btnHover);
+    -moz-transition:    right var(--td_toggleNavbar), opacity var(--td_btnHover);
+    -ms-transition:     right var(--td_toggleNavbar), opacity var(--td_btnHover);
+    -o-transition:      right var(--td_toggleNavbar), opacity var(--td_btnHover);
+}
+
+html.optionalAnimations .wfp_closeBtn svg path {
+    transition:         stroke var(--td_btnHover);
+    -webkit-transition: stroke var(--td_btnHover);
+    -moz-transition:    stroke var(--td_btnHover);
+    -ms-transition:     stroke var(--td_btnHover);
+    -o-transition:      stroke var(--td_btnHover);
+}
+
+html.optionalAnimations .wfp_closeBtn svg path.outline {
+    transition:         stroke-width var(--td_btnHover);
+    -webkit-transition: stroke-width var(--td_btnHover);
+    -moz-transition:    stroke-width var(--td_btnHover);
+    -ms-transition:     stroke-width var(--td_btnHover);
+    -o-transition:      stroke-width var(--td_btnHover);
+}
+
+
+
+
+/* Work Display Full Preview - Header */
+.wfp_header {
+    z-index: 610;
+    position: relative;
+    display: flex;
+    width: auto; height: auto;
+    max-width: var(--mainMaxWidth);
+    /* min-height: 6rem; */
+    margin: 3rem auto 1rem;
+    padding: 1.66rem 1.66rem 1.36rem;
+    border-radius: var(--standardBorderRadius);
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: baseline;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    background-color: var(--ch_background_alt);
+}
+
+
+.wfp_header_category {
+    width: 100%; height: auto;
+    font-size: 0.8rem;
+    line-height: 1em;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    color: var(--c_onBackground);
+}
+
+
+.wfp_header_title {
+    width: 100%; height: auto;
+    font-size: 1.72rem;
+    line-height: 1.2em;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ch_onBackground);
+}
+
+
+
+
+/* Work Display Full Preview - Body */
+.wfp_body {
+    z-index: 610;
+    position: relative;
+    display: flex;
+    width: auto; height: auto;
+    max-width: var(--mainMaxWidth);
+    margin: auto;
+    flex-flow: row-reverse nowrap;
+}
+/* Note: wfp_body has flex-direction set to row-reverse & body_right is
+appended first to allow the right side to be navigated to (with tab) first. */
+
+
+.wfp_body_left {
+    z-index: 611;
+    display: flex;
+    width: 72%; height: fit-content;
+    padding: 0.44rem 0.22rem 0.44rem 0;
+    flex-flow: column nowrap;
+    align-items: center;
+    /* background-color: #0000ff06; */
+}
+
+
+.wfp_body_right {
+    z-index: 611;
+    width: 28%; height: fit-content;
+    padding: 0.44rem 0 0.44rem 0.22rem;
+    /* background-color: #ff000006; */
+}
+
+
+
+
+/*----------------------------------------------------------------|Work Display Full Preview - Slideshow Section*/
+.wfp_slideshowSection {
+    z-index: 620;
+    position: relative;
+    display: flex;
+    width: 100%; height: auto;
+    /* margin-top: 2rem; */
+    flex-flow: column nowrap;
+    color: var(--c_onBackground);
+    background-color: var(--c_background);
+    overflow: hidden;
+    border-radius: var(--standardBorderRadius);
+}
+
+
+.wfp_slideshowContainer {
+    z-index: 621;
+    position: relative;
+    width: 100%; height: auto;
+    aspect-ratio: var(--imgAspectRatio);
+    overflow: hidden;
+}
+
+
+.wfp_slideContainer {
+    z-index: 622;
+    position: absolute;
+    display: block;
+    width: 100%; height: 100%;
+    aspect-ratio: var(--imgAspectRatio);
+    transition: opacity var(--td_wfpSlideTransition) ease-out;
+}
+
+.wfp_slideContainer[href] {
+    cursor: pointer;
+}
+
+
+
+.wfp_slide {
+    z-index: 622;
+    display: block;
+    width: 100%; height: 100%;
+    /* aspect-ratio: var(--imgAspectRatio); */
+    object-fit: contain;
+    background-color: var(--c_imgBg);
+}
+
+
+iframe.wfp_slide { border: none; }
+
+
+
+
+.wfp_slideSelector {
+    z-index: 623;
+    position: relative;
+    width: 100%; height: 6rem;
+    line-height: 1em;
+    color: var(--c_onBackground);
+    overflow: hidden;
+}
+
+
+
+[class*=wfp_slideSelector_arrow] {
+    z-index: 629;
+    position: absolute;
+    display: flex;
+    width: var(--slideSelectorArrowWidth);
+    height: 1.2rem;
+    bottom: 0;
+    padding-top: 0.16em;
+    border: none;
+    border-radius: var(--standardBorderRadius);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--c_onSurface);
+    background-color: var(--c_primary_alt);
+    overflow: hidden;
+    cursor: pointer;
+}
+/* TODO: Figure out how to properly center text without using padding. */
+
+[class*=wfp_slideSelector_arrow]:hover, [class*=wfp_slideSelector_arrow]:focus-visible {
+    color: var(--ch_onSurface);
+    background-color: var(--ch_primary_alt);
+}
+
+
+.wfp_slideSelector_arrow-left {
+    float: left;
+    left: 0;
+}
+.wfp_slideSelector_arrow-right {
+    float: right;
+    right: 0;
+}
+
+.wfp_slideSelector_arrow-left:hover, .wfp_slideSelector_arrow-left:focus-visible {
+    text-shadow: 0.16em 0 0.14em #111;
+}
+.wfp_slideSelector_arrow-right:hover, .wfp_slideSelector_arrow-right:focus-visible {
+    text-shadow: -0.16em 0 0.14em #111;
+}
+
+
+
+.wfp_slideSelector_dotsContainer {
+    z-index: 624;
+    position: relative;
+    display: flex;
+    /* Insure width equals 100% - ([class*=wfp_slideSelector_arrow]'s width * 2). */
+    width: calc(100% - var(--slideSelectorArrowWidth) * 2);
+    height: 100%;
+    margin: 0 var(--slideSelectorArrowWidth);
+    /* Insure margin-left equals [class*=wfp_slideSelector_arrow]'s width. */
+    padding: 0 0.1rem;
+    flex-flow: row nowrap;
+    flex-shrink: 0;
+    align-items: center;
+    overflow-x: auto; overflow-y: visible;
+    /* scrollbar-width: thin; */
+}
+
+.wfp_slideSelector_dotsContainer::-webkit-scrollbar {
+    height: 1.2rem;
+}
+
+
+
+.wfp_slideSelector_dotContainer {
+    z-index: 625;
+    position: relative;
+    display: inline-block;
+    height: 85%; width: auto;
+    min-width: max-content;
+    margin: 0 0.2em;
+    border-radius: 0.2em;
+    aspect-ratio: var(--imgAspectRatio);
+    overflow: visible;
+    background-color: var(--c_imgBg);
+    cursor: pointer;
+}
+
+
+.wfp_slideSelector_dot {
+    z-index: 625;
+    position: relative;
+    height: 100%; width: 100%;
+    min-width: max-content;
+    border-radius: var(--standardBorderRadius);
+    aspect-ratio: var(--imgAspectRatio);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    box-shadow: 0 0 0 -0.01em var(--c_primary);
+}
+
+.wfp_slideSelector_dotContainer:hover .wfp_slideSelector_dot,
+.wfp_slideSelector_dotContainer:focus-visible .wfp_slideSelector_dot {
+    box-shadow: 0 0 0.12em 0.1em var(--ch_onBackground);
+}
+
+
+.wfp_slideSelector_dotContainer.active .wfp_slideSelector_dot {
+    z-index: 626;
+    box-shadow: 0 0 0 0.2em var(--c_primary);
+}
+
+.wfp_slideSelector_dotContainer.active:hover .wfp_slideSelector_dot,
+.wfp_slideSelector_dotContainer.active:focus-visible .wfp_slideSelector_dot {
+    box-shadow: 0 0 0.14em 0.24em var(--ch_primary);
+}
+
+
+/* Slide selector dot hover & active transitions. */
+html.optionalAnimations .wfp_slideSelector_dot {
+    transition:         background-color 256ms, box-shadow 128ms;
+    -webkit-transition: background-color 256ms, box-shadow 128ms;
+    -moz-transition:    background-color 256ms, box-shadow 128ms;
+    -ms-transition:     background-color 256ms, box-shadow 128ms;
+    -o-transition:      background-color 256ms, box-shadow 128ms;
+}
+
+
+
+
+/* TODO: Create & use an image instead of using divs to create the video icon. */
+.wfp_slideSelector_dot_vidIconContainer {
+    z-index: 627;
+    position: absolute;
+    display: flex;
+    height: 55%; width: auto;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    border-radius: 0.2em;
+    background-color: #101010;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.wfp_slideSelector_dot_vidIconInnerContainer {
+    position: relative;
+    height: 70%; width: 70%;
+    transform: translateX(35%) scaleX(135%);
+    background-color: #00000000;
+    overflow: hidden;
+}
+
+.wfp_slideSelector_dot_vidIcon {
+    position: relative;
+    height: 100%; width: 100%;
+    transform: translate(-50%, 50%);
+    background-color: #fff;
+    rotate: 45deg;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+
+
+
+/*----------------------------------------------------------------|Work Display Full Preview - Description Section*/
+.wfp_descContainer {
+    z-index: 620;
+    position: relative;
+    display: flex;
+    width: 100%; height: auto;
+    max-height: 40rem;
+    margin-top: 2rem;
+    padding: 1rem 1.2rem 0;
+    border-radius: var(--standardBorderRadius);
+    flex-flow: column nowrap;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 1.5em;
+    background-color: var(--c_background);
+    box-shadow: inset 0 -2.2em 1.4em #00000044;
+}
+
+.wfp_descContainer.expanded {
+    max-height: none;
+    padding-bottom: 1.4em;
+    box-shadow: none;
+    /* box-shadow: inset 0 0 1.4em #00000030; */
+}
+
+.wfp_descContainer.notExpandable {
+    padding-bottom: 1em;
+    box-shadow: none;
+    /* box-shadow: inset 0 0 1.4em #00000030; */
+}
+
+html.optionalAnimations .wfp_descContainer {
+    transition:         box-shadow 256ms ease-out;
+    -webkit-transition: box-shadow 256ms ease-out;
+    -moz-transition:    box-shadow 256ms ease-out;
+    -ms-transition:     box-shadow 256ms ease-out;
+    -o-transition:      box-shadow 256ms ease-out;
+}
+
+
+
+.wfp_desc {
+    z-index: 621;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    color: var(--c_onBackground);
+}
+
+
+
+/* WFP - Description Contents */
+/* .wfp_desc ul { list-style: none; }
+.wfp_desc ul li::before {
+    content: "\2022";
+    color: var(--ch_onBackground);
+    font-weight: bold;
+    display: inline-block;
+    width: 1.1em;
+    margin-left: -1.05em;
+} */
+
+
+.wfp_desc hr {
+    margin: 0.2em auto 0.8em;
+    border-color: var(--ch_onBackground);
+}
+
+.wfp_desc hr.sub {
+    width: 85%;
+    margin: 0.2em auto 0.6em 0;
+    border-color: var(--c_onBackground);
+    opacity: 0.6;
+}
+
+
+/* Note: I'm not currently using h1 in any descriptions. */
+.wfp_desc h1, .wfp_desc h2 {
+    margin: 4.1em 0 0.64em;
+    border-bottom: 2px solid var(--ch_primary_alt) /*var(--c_onBackground)*/;
+    font-size: 1.14rem;
+    font-weight: bold;
+    color: var(--ch_primary) /*var(--ch_onBackground)*/;
+}
+
+.wfp_desc h2 { margin-top: 3.1em; }
+
+.wfp_desc h3 {
+    width: 84%;
+    margin: 2.1em 0 0.3em;
+    border-bottom: 1px solid var(--c_primary_alt) /*var(--c_onBackground)*/;
+    font-size: 1.1rem;
+    color: var(--c_primary) /*var(--ch_onBackground)*/;
+    /* opacity: 0.74; */
+}
+
+.wfp_desc h4 {
+    margin: 1.1em 0 0;
+    font-size: 1.06rem;
+    text-decoration: underline;
+    color: var(--c_primary_alt) /*var(--ch_onBackground)*/;
+}
+
+
+h1.noBr, h2.noBr, h3.noBr, h4.noBr {
+    margin-top: 0;
+}
+
+
+
+/* WFP - Description Expand Button */
+.wfp_descExpandBtn {
+    z-index: 622;
+    position: absolute;
+    width: max-content; height: 1.4rem;
+    left: 50%; bottom: 0;
+    transform: translateX(-50%);
+    padding: 0 1em;
+    /* border: 1px solid var(--c_primary_alt); */
+    border: 1px solid var(--c_background_alt);
+    border-bottom: none;
+    border-radius: var(--standardBorderRadius) var(--standardBorderRadius) 0 0;
+    color: var(--c_onSurface);
+    background-color: var(--c_background_alt);
+    font-size: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.wfp_descExpandBtn:hover {
+    color: var(--ch_onSurface);
+    /* background-color: var(--ch_background_alt); */
+    border: 1px solid var(--c_primary);
+    border-bottom: none;
+}
+
+html.optionalAnimations .wfp_descExpandBtn {
+    transition:         color 128ms, /*background-color 128ms,*/ border-color 128ms;
+    -webkit-transition: color 128ms, /*background-color 128ms,*/ border-color 128ms;
+    -moz-transition:    color 128ms, /*background-color 128ms,*/ border-color 128ms;
+    -ms-transition:     color 128ms, /*background-color 128ms,*/ border-color 128ms;
+    -o-transition:      color 128ms, /*background-color 128ms,*/ border-color 128ms;
+}
+
+
+
+
+/*----------------------------------------------------------------|Work Display Full Preview - Details Section*/
+.wfp_detailsContainer {
+    padding: 0.62em;
+    border-radius: var(--standardBorderRadius);
+    overflow: hidden;
+    font-size: 0.84rem;
+    word-spacing: 0.04em;
+    background-color: var(--c_background);
+}
+
+
+.wfp_details {
+    width: 100%;
+    /* table-layout: fixed; */
+    border-collapse: collapse;
+}
+
+
+.wfp_detailsChild {
+    border-left: 0.16em solid #00000000;
+    /* background-color: var(--c_background); */
+}
+
+.wfp_detailsChild:hover, .wfp_detailsChild:focus-visible {
+    /* background-color: #aaaaaa0c; */
+    background-color: var(--ch_background);
+    border-left-color: var(--c_secondary);
+}
+
+
+.wfp_detailLabel {
+    width: auto;
+    min-width: 5.7em;
+    padding: 0.3em 0 0.3em 0.1em;
+    vertical-align: top;
+    color: #787878;
+    /* -?-: Create an 'onBackground-subtle' color variable? */
+}
+
+.wfp_detailContent {
+    padding: 0.3em 0.3em 0.3em 0;
+    vertical-align: top;
+    color: var(--c_onBackground);
+    cursor: default;
+}
+/* -?-: Make wfp_detailContent scroll horizontally? */
+
+
+
+.wfp_detailContent span {
+    border-width: 0 0.24em;
+    border-style: solid;
+    border-color: var(--c_primary_alt);
+    border-radius: 0.25em;
+    color: var(--c_onSurface);
+    background-color: var(--c_primary_alt);
+}
+
+
+.wfp_detailContent span[title]:hover, .wfp_detailContent span[title]:focus-visible {
+    border-color: var(--ch_primary_alt);
+    color: var(--ch_onSurface);
+    background-color: var(--ch_primary_alt);
+}
+
+
+.wfp_detailContent a[href] {
+    color: var(--c_primary);
+}
+
+.wfp_detailContent a[href]:hover, .wfp_detailContent a[href]:focus-visible {
+    color: var(--ch_primary);
+}
+
+
+
+
+/*----------------------------------------------------------------|Work Display Full Preview - Related Works Section*/
+.wfp_relatedWorksContainer {
+    z-index: 720;
+    position: relative;
+    width: auto; height: max-content;
+    max-width: var(--mainMaxWidth);
+    margin: 8rem auto;
+    padding: 0 1rem;
+    overflow: clip;
+}
+
+
+.wfp_relatedWorksLabelContainer {
+    z-index: 728;
+    display: block;
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1em;
+    /* background-color: #333; */
+    border-bottom: 2px solid var(--c_onBackground);
+    overflow: hidden;
+}
+/* Note: I don't understand why this won't render on top of the overlay, despite being a sibling with a higher z-index. */
+
+.wfp_relatedWorksLabel {
+    z-index: 729;
+    align-items: center;
+    vertical-align: middle;
+    height: 100%;
+    padding: 0 0.2em;
+    font-size: 1.1rem;
+    color: var(--ch_onBackground);
+}
+
+
+.wfp_relatedWorks {
+    z-index: 721;
+    position: relative;
+    display: flex;
+    width: auto; height: 14rem;
+    flex-flow: row nowrap;
+    flex-shrink: 0;
+    overflow-x: scroll; overflow-y: visible;
+    background-color: var(--c_background);
+}
+/* TODO: Figure out why setting this to display as a grid doesn't work. */
+
+
+.wfp_relatedWorks_overlayContainer {
+    z-index: 726;
+    position: absolute;
+    width: 100%;
+    /* height: 14rem; */
+    height: calc(14rem - var(--scrollbarWidth));
+    /* Note The calc variant of height  */
+    top: 3rem; left: 0;
+    padding: 0 1rem;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+.wfp_relatedWorks_overlay {
+    z-index: 727;
+    position: relative;
+    width: 100%;
+    height: 250%;
+    transform: translateY(-25%);
+    box-shadow: inset 0 0 2.8em 1.2em #000000a0;
+    overflow: hidden;
+}
+/* TODO: Get related works overlay to not overlap the horizontal scrollbar. */
+
+
+
+
+/*----------------------------------------------------------------|Work Display Full Preview - Credits Section*/
+.wfp_creditsSection {
+    z-index: 630;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    width: auto; height: fit-content;
+    max-width: var(--mainMaxWidth);
+    padding: 0 1rem;
+    margin: 8rem auto 4.8rem;
+    overflow: hidden;
+}
+
+
+.wfp_creditsHeader {
+    padding: 0.2em;
+    border-bottom: 2px solid var(--c_onBackground);
+    font-size: 1.1rem;
+    color: var(--ch_onBackground);
+}
+
+
+.wfp_creditsContainer {
+    font-size: 0.94rem;
+}
+
+
+
+.wfp_credit {
+    padding: 0.48em 0.46em 0.4em;
+    margin: 0.8em 0.2em;
+    border-bottom: 1px solid var(--ch_surface);
+    border-radius: var(--standardBorderRadius);
+    vertical-align: top;
+    overflow: hidden;
+    line-height: 1.5em;
+    color: var(--c_onBackground);
+    background-color: var(--c_background);
+}
+
+.wfp_credit:hover {
+    background-color: var(--ch_background);
+}
+
+
+
+.wfp_credit_labelContainer {
+    width: auto; height: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 1em;
+    color: var(--c_link);
+    pointer-events: none;
+}
+
+
+.wfp_credit_labelContainer:hover {
+    color: var(--ch_link);
+}
+/* Note: Color of labelContainer is set so the ellipsis
+created by text-overflow matches the text color. */
+
+
+.wfp_credit_label {
+    color: var(--c_link);
+    /* Setting color here prevents it from changing on hover if it has no href attribute. */
+    pointer-events: all;
+}
+/* Note: Pointer-events for labelContainer & label are set
+because the hover state of labelContainer would sometimes
+get stuck on when it was no longer being hovered over. */
+
+
+.wfp_credit.expanded .wfp_credit_labelContainer {
+    white-space: normal;
+}
+
+
+
+.wfp_credit_desc {
+    display: block;
+    width: auto; height: auto;
+    margin: 0.34em 0 0 1.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 1.25em;
+}
+
+
+.wfp_credit.expanded .wfp_credit_desc {
+    white-space: normal;
+}
+
+
+/* TODO: Create single class for wfp section headers/labels. */
+
+
+
+
+/*----------------------------------------------------------------|Work Display Full Preview Open/Close Transitioning*/
+.workFullPreviewContainer.transitioning {
+    border: none;
+    overflow: hidden;
+}
+
+.workFullPreviewContainer.transitioning .workFullPreview {
+    padding: 0;
+}
+
+.workFullPreviewContainer.transitioning .wfp_header {
+    height: 0;
+    margin-top: 0; margin-bottom: 0;
+    padding: 0;
+    opacity: 0%;
+}
+
+.workFullPreviewContainer.transitioning .wfp_body {
+    padding: 0;
+}
+
+.workFullPreviewContainer.transitioning .wfp_body_left {
+    width: 100%;
+    padding: 0;
+}
+
+.workFullPreviewContainer.transitioning .wfp_body_right {
+    width: 0;
+    padding: 0;
+}
+
+.workFullPreviewContainer.transitioning .wfp_slideSelector {
+    height: 0;
+    pointer-events: none;
+    cursor: default;
+    opacity: 0%;
+}
+
+
+
+
+/*----------------------------------------------------------------|Work Display Full Preview Transitions*/
+.workFullPreviewContainer {
+    transition:         width var(--td_wfpToggle), height var(--td_wfpToggle),
+        top var(--td_wfpToggle), left var(--td_wfpToggle);
+    -webkit-transition: width var(--td_wfpToggle), height var(--td_wfpToggle),
+        top var(--td_wfpToggle), left var(--td_wfpToggle);
+    -moz-transition:    width var(--td_wfpToggle), height var(--td_wfpToggle),
+        top var(--td_wfpToggle), left var(--td_wfpToggle);
+    -ms-transition:     width var(--td_wfpToggle), height var(--td_wfpToggle),
+        top var(--td_wfpToggle), left var(--td_wfpToggle);
+    -o-transition:      width var(--td_wfpToggle), height var(--td_wfpToggle),
+        top var(--td_wfpToggle), left var(--td_wfpToggle);
+}
+
+html.optionalAnimations .workFullPreview {
+    transition:         padding var(--td_wfpToggle2) ease-out;
+    -webkit-transition: padding var(--td_wfpToggle2) ease-out;
+    -moz-transition:    padding var(--td_wfpToggle2) ease-out;
+    -ms-transition:     padding var(--td_wfpToggle2) ease-out;
+    -o-transition:      padding var(--td_wfpToggle2) ease-out;
+}
+
+html.optionalAnimations .wfp_header {
+    transition:         height var(--td_wfpToggle2), margin var(--td_wfpToggle2) ease-out,
+        padding var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+    -webkit-transition: height var(--td_wfpToggle2), margin var(--td_wfpToggle2) ease-out,
+        padding var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+    -moz-transition:    height var(--td_wfpToggle2), margin var(--td_wfpToggle2) ease-out,
+        padding var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+    -ms-transition:     height var(--td_wfpToggle2), margin var(--td_wfpToggle2) ease-out,
+        padding var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+    -o-transition:      height var(--td_wfpToggle2), margin var(--td_wfpToggle2) ease-out,
+        padding var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+}
+
+html.optionalAnimations .wfp_body {
+    transition:         padding var(--td_wfpToggle2) ease-out;
+    -webkit-transition: padding var(--td_wfpToggle2) ease-out;
+    -moz-transition:    padding var(--td_wfpToggle2) ease-out;
+    -ms-transition:     padding var(--td_wfpToggle2) ease-out;
+    -o-transition:      padding var(--td_wfpToggle2) ease-out;
+}
+
+html.optionalAnimations .wfp_body_left, html.optionalAnimations .wfp_body_right {
+    transition:         width var(--td_wfpToggle2), height var(--td_wfpToggle2);
+    -webkit-transition: width var(--td_wfpToggle2), height var(--td_wfpToggle2);
+    -moz-transition:    width var(--td_wfpToggle2), height var(--td_wfpToggle2);
+    -ms-transition:     width var(--td_wfpToggle2), height var(--td_wfpToggle2);
+    -o-transition:      width var(--td_wfpToggle2), height var(--td_wfpToggle2);
+}
+
+html.optionalAnimations .wfp_slideSelector {
+    transition:         height var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+    -webkit-transition: height var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+    -moz-transition:    height var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+    -ms-transition:     height var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+    -o-transition:      height var(--td_wfpToggle2) ease-out, opacity var(--td_wfpToggle2);
+}
+
+
+
+
+
+
+/*----------------------------------------------------------------|Index - Main Background*/
+html.index main {
+    background-color: #00000000;
+}
+
+
+html.index #main_backgroundContainer {
+    z-index: 0;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background-color: var(--c_background);
+}
+
+
+html.index #main_background {
+    z-index: 0;
+    position: absolute;
+    top: 0; left: 0;
+    background-image: url("./assets/images/RepeatingKLogo-Solid-1080x1920.png");
+    width: 100%; height: 320%;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    opacity: 8%;
+    /* -?-: Opacity works strangely on firefox, and completely changes how this looks. */
+}
+
+
+
+/* -------- Index - Main Background Breakpoint(s) -------- */
+@media only screen and (min-width: 2048px) {
+    html.index #main_background {
+        background-image: url("./assets/images/RepeatingKLogo-Solid-2160x3840.png");
+    }
+}
+
+
+
+
+/*----------------------------------------------------------------|Index - Main Header*/
+html.index #main_header {
+    z-index: 120;
+    position: relative;
+    display: flex;
+    width: 100%; height: auto;
+    margin: 0;
+    padding: 4rem 0;
+    overflow: hidden;
+    flex-flow: row nowrap;
+    flex-shrink: 0;
+    justify-content: unset;
+    align-items: unset;
+    font-size: 1rem;
+    letter-spacing: unset;
+    color: var(--c_onBackground);
+    background-color: #00000000;
+    box-shadow: none;
+    /* Testing Styling - Remove */
+    background-color: #0000002a;
+}
+
+
+
+html.index #header_left {
+    z-index: 122;
+    position: relative;
+    width: 66%; height: fit-content;
+    /* background-color: #0094d00a; */
+}
+
+
+html.index #header_right {
+    z-index: 121;
+    position: relative;
+    width: 34%; height: auto;
+    margin: 0;
+    /* background-color: #7900100a; */
+}
+
+
+
+
+html.index #header_left h1 {
+    z-index: 125;
+    width: max-content;
+    margin: 2.6rem 0 2.6rem 2.6rem;
+    padding: 0.4rem 1.32rem;
+    color: var(--ch_onBackground);
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-size: 3.4rem;
+    line-height: 1.4em;
+    font-weight: 600;
+
+    /* Testing Styling - Remove */
+    border: 2px dashed #00000060;
+}
+
+
+
+
+html.index #header_logo {
+    z-index: 125;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+
+html.index #header_svgLogo {
+    z-index: 126;
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+}
+
+
+html.index #header_svgLogo ellipse {
+    z-index: 127;
+    display: inline;
+    fill: none;
+    stroke: var(--c_primary);
+    stroke-width: 58px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+}
+
+html.index #header_svgLogo path {
+    z-index: 127;
+    fill: none;
+    stroke: var(--c_primary);
+    stroke-width: 56px;
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+}
+
+
+html.index #header_svgLogo ellipse.outline {
+    z-index: 126;
+    stroke: var(--c_secondary);
+    stroke-width: 72px;
+}
+
+html.index #header_svgLogo path.outline {
+    z-index: 126;
+    stroke: var(--c_secondary);
+    stroke-width: 70px;
+}
+
+
+
+
+/*----------------------------------------------------------------|Index - Main Section Classes*/
+.mainSection {
+    z-index: 140;
+    position: relative;
+    display: block;
+    width: auto; height: max-content;
+    max-width: var(--mainMaxWidth);
+    margin: auto;
+    padding: 0 1rem;
+    overflow: clip;
+}
+
+
+.mainSection .labelContainer {
+    z-index: 141;
+    width: 100%; height: 2.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--c_onBackground);
+    overflow: hidden;
+}
+
+.mainSection .label {
+    z-index: 142;
+    height: 100%;
+    padding: 0 0.2em;
+    align-items: center;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    line-height: 1em;
+    color: var(--ch_onBackground);
+}
+
+
+
+
+/*----------------------------------------------------------------|Index - Contact Details Section*/
+html.index #briefIntroSection {
+    margin: 12rem auto;
+}
+
+
+#briefIntroSection .sectionContents {
+    z-index: 143;
+    position: relative;
+    display: flex;
+    width: 100%; height: max-content;
+    padding: 0 1rem;
+    border-radius: var(--standardBorderRadius);
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    font-size: 1.1rem;
+    line-height: var(--standardLineHeight);
+    color: var(--c_onBackground);
+    background-color: var(--ch_background);
+}
+
+
+
+
+/*----------------------------------------------------------------|Index - Featured Works Section*/
+html.index #featuredWorksContainer {
+    /* max-width: 84%; */
+    margin: 5rem auto;
+    overflow: clip;
+}
+
+
+
+#featuredWorks {
+    z-index: 143;
+    position: relative;
+    display: flex;
+    width: auto; height: 14rem;
+    flex-flow: row nowrap;
+    flex-shrink: 0;
+    overflow-x: scroll; overflow-y: visible;
+    background-color: var(--c_background);
+}
+/* TODO: Figure out why setting this to display as a grid doesn't work. */
+
+
+
+#featuredWorks_overlayContainer {
+    z-index: 146;
+    position: absolute;
+    width: 100%; height: 14rem;
+    top: 3rem; left: 0;
+    padding: 2.25rem 1rem 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+#featuredWorks_overlay {
+    z-index: 147;
+    position: relative;
+    width: 100%;
+    height: 250%;
+    transform: translateY(-25%);
+    box-shadow: inset 0 0 2.8em 1.2em #000000a0;
+    overflow: hidden;
+}
+/* TODO: Get featured works overlay to not overlap the horizontal scrollbar. */
+
+
+
+
+/* @media only screen and (max-width: 800px) {
+    #featuredWorksContainer { max-width: 99%; }
+} */
+
+
+
+
+/*----------------------------------------------------------------|Index - Social Links Section*/
+html.index #socialLinksSection {
+    /* display: flex; */
+    margin: 12rem auto;
+    /* flex-flow: column wrap;
+    justify-content: baseline;
+    align-items: center; */
+    /* background-color: var(--c_background_alt); */
+}
+
+
+
+#socialLinksContainer {
+    z-index: 143;
+    position: relative;
+    display: flex;
+    width: 100%; height: max-content;
+    padding: 0 1rem;
+    border-radius: var(--standardBorderRadius);
+    flex-shrink: 0;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--ch_background);
+}
+
+
+
+.socialLinkContainer {
+    z-index: 144;
+    position: relative;
+    display: flex;
+    width: 10rem; height: auto;
+    aspect-ratio: 1;
+    margin: 0.4em 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 20em;
+    -webkit-perspective: 20em;
+}
+
+
+.socialLink {
+    z-index: 145;
+    position: relative;
+    display: block;
+    width: auto; height: 85%;
+    margin: auto;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    overflow: clip;
+    cursor: pointer;
+    /* background-color: #00000020; */
+}
+
+.socialLink:hover {
+    height: 96%;
+    rotate: x 9deg;
+}
+
+
+html.optionalAnimations .socialLink {
+    transition:         width var(--td_socialLinkHover), height var(--td_socialLinkHover), rotate var(--td_socialLinkHover);
+    -webkit-transition: width var(--td_socialLinkHover), height var(--td_socialLinkHover), rotate var(--td_socialLinkHover);
+    -moz-transition:    width var(--td_socialLinkHover), height var(--td_socialLinkHover), rotate var(--td_socialLinkHover);
+    -ms-transition:     width var(--td_socialLinkHover), height var(--td_socialLinkHover), rotate var(--td_socialLinkHover);
+    -o-transition:      width var(--td_socialLinkHover), height var(--td_socialLinkHover), rotate var(--td_socialLinkHover);
+}
+
+
+
+.socialLink .icon {
+    z-index: 146;
+    position: absolute;
+    /* width: 100%; height: 100%; */
+    width: 102%; height: 102%;
+    top: -1%; left: -1%;
+}
+
+
+
+.socialLink .highlightOverlay {
+    z-index: 147;
+    position: absolute;
+    width: 140%; height: 60%;
+    top: -30%; left: 10%;
+    rotate: 30deg;
+    background-color: #ffffff0e;
+    /* backdrop-filter: invert(20%); */
+    pointer-events: none;
+}
+
+.socialLink .highlightOverlay.brighter {
+    background-color: #ffffff50;
+}
+
+
+.socialLink:hover .highlightOverlay {
+    top: -20%; left: -6%;
+    background-color: #ffffff24;
+    /* backdrop-filter: invert(40%); */
+}
+
+.socialLink:hover .highlightOverlay.brighter {
+    background-color: #ffffff70;
+}
+
+
+html.optionalAnimations .socialLink .highlightOverlay {
+    transition:         top var(--td_socialLinkHover), left var(--td_socialLinkHover), background-color var(--td_socialLinkHover);
+    -webkit-transition: top var(--td_socialLinkHover), left var(--td_socialLinkHover), background-color var(--td_socialLinkHover);
+    -moz-transition:    top var(--td_socialLinkHover), left var(--td_socialLinkHover), background-color var(--td_socialLinkHover);
+    -ms-transition:     top var(--td_socialLinkHover), left var(--td_socialLinkHover), background-color var(--td_socialLinkHover);
+    -o-transition:      top var(--td_socialLinkHover), left var(--td_socialLinkHover), background-color var(--td_socialLinkHover);
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+    #socialLinksContainer { max-width: 98%; }
+}
+
+
+
+
+/*----------------------------------------------------------------|Index - Contact Details Section*/
+html.index #contactDetailsSection {
+    margin: 12rem auto;
+}
+
+
+
+#contactDetailsSection .sectionContents {
+    z-index: 143;
+    position: relative;
+    /* display: flex; */
+    width: 100%; height: max-content;
+    padding: 0 1rem;
+    border-radius: var(--standardBorderRadius);
+    overflow: hidden;
+    font-size: 1rem;
+    text-align: center;
+    line-height: var(--standardLineHeight);
+    color: var(--c_onBackground);
+    background-color: var(--ch_background);
+}
+
+
+
+
+
+
+/*----------------------------------------------------------------|About Me Page*/
+html.aboutMe #aboutMeContainer {
+    margin-top: 6rem;
+}
+
+
+html.aboutMe main div {
+    max-width: var(--mainMaxWidth);
+    margin: auto;
+    font-size: 1rem;
+    line-height: var(--standardLineHeight);
+    color: var(--c_onBackground);
+}
+
+
+
+html.aboutMe #favGamesSection p {
+    margin: 0;
+}
+
+
+
+html.aboutMe #favGamesList {
+    margin: 0;
+}
+
+
+html.aboutMe #favGamesList li {
+    width: fit-content;
+}
+
+
+html.aboutMe #favGamesList li:hover {
+    color: var(--ch_onBackground);
+}
+
+
+
+
+
+
+/*----------------------------------------------------------------|Contact Me Page*/
+html.contactMe #contactDetailsSection {
+    margin: 6rem auto;
+}

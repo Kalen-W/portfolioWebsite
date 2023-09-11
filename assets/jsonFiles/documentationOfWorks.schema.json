@@ -1,0 +1,136 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "meta": {
+            "type":"object",
+            "properties": {
+                "categoryData": {
+                    "type": "object",
+                    "properties": {
+                        "game":      {"$ref": "#/definitions/metaDataObj"},
+                        "model":     {"$ref": "#/definitions/metaDataObj"},
+                        "art":       {"$ref": "#/definitions/metaDataObj"},
+                        "animation": {"$ref": "#/definitions/metaDataObj"},
+                        "webDesign": {"$ref": "#/definitions/metaDataObj"},
+                        "misc":      {"$ref": "#/definitions/metaDataObj"}
+                    },
+                    "required": ["game", "model", "art", "animation", "webDesign", "misc"]
+                },
+
+                "tagData": {
+                    "type": "object",
+                    "additionalProperties": {"$ref": "#/definitions/metaDataObj"}
+                },
+
+                "devToolData": {
+                    "type": "object",
+                    "additionalProperties": {"$ref": "#/definitions/metaDataObj"}
+                }
+            },
+            "required": ["categoryData", "tagData", "devToolData"]
+        },
+
+
+        "games":     {"type": "array", "items": {"$ref": "#/definitions/projectData"}},
+        "models":    {"type": "array", "items": {"$ref": "#/definitions/projectData"}},
+        "art":       {"type": "array", "items": {"$ref": "#/definitions/projectData"}},
+        "animation": {"type": "array", "items": {"$ref": "#/definitions/projectData"}},
+        "webDesign": {"type": "array", "items": {"$ref": "#/definitions/projectData"}},
+        "misc":      {"type": "array", "items": {"$ref": "#/definitions/projectData"}}
+    },
+
+    "required": ["meta", "games", "models", "art", "animation", "webDesign", "misc"],
+
+
+
+
+    "definitions": {
+        "projectData": {
+            "type": "object",
+            "properties": {
+                "id":               {"type": "string"},
+                "title":            {"type": "string"},
+                "category":         {
+                    "type": "string",
+                    "enum": ["game", "model", "art", "animation", "webDesign", "misc"]
+                },
+                "date_devStart":    {"type": "string"},
+                "date_devEnd":      {"type": "string"},
+                "tags":             {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {"type": "string"}
+                },
+                "devTools":         {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {"type": "string"}
+                },
+                "links":            {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {"$ref": "#/definitions/resourceData"}
+                },
+                "desc_brief":       {"type": "string"},
+                "desc_detailed":    {"type": "string"},
+                "img_thumbnail":    {"$ref": "#/definitions/resourceData"},
+                "slideshowSlides":  {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {"$ref": "#/definitions/resourceData"}
+                },
+                "relatedWorks":     {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {"type": "string"}
+                },
+                "credits":          {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {"$ref": "#/definitions/resourceData"}
+                },
+                "priority":         {"type": "integer"},
+                "enabled":          {"type": "boolean"}
+            },
+            "required": ["id", "title", "category", "tags", "devTools", "desc_brief", "desc_detailed", "img_thumbnail", "enabled"]
+        },
+
+
+
+        "resourceData": {
+            "type": "object",
+            "properties": {
+                "url":             {"type": "string"},
+                "type":            {
+                    "type": "string",
+                    "enum": ["image", "video", "youtubeVideo", "webPage", "download"]
+                },
+                "absoluteUrl":     {"type": "boolean"},
+                "displayName":     {"type": "string"},
+                "desc":            {"type": "string"},
+                "subResourceData": {
+                    "type": "object",
+                    "additionalProperties": {"$ref": "#/definitions/resourceData"}
+                },
+                "imageRendering":  {
+                    "type": "string",
+                    "enum": ["auto", "crisp-edges", "pixelated"]
+                }
+            },
+            "required": ["url", "type"]
+        },
+
+
+        "metaDataObj": {
+            "type": "object",
+            "properties": {
+                "id":                   {"type": "string"},
+                "displayName":          {"type": "string"},
+                "displayName_plural":   {"type": "string"},
+                "desc":                 {"type": "string"}
+            },
+            "required": ["displayName", "desc"]
+        }
+    }
+}

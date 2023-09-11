@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- I have no idea if these conditional comments are necessary, they were added by the "HTML Boilerplate" extension. -->
+<!-- (extension link: https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate) -->
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en-US" translate="no" class="aboutMe optionalAnimations">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Necessary? -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kalen Weinheimer">
+    <meta name="description" content="A portfolio containing various works by Kalen Weinheimer.">
+    <meta name="keywords" contents="Video Game, Game Development, Game Developer, Video Game Development, Video Game Developer, Portfolio, Game Projects">
+    <title>About Kalen Weinheimer</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/icons/KLogo-LightBlue-16px.png">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body onload="constructHtmlSections()">
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+
+<!----------------------------------------------------------------|Navbar -->
+    <button class="navbarToggleBtn textOutlineBlack2px alignItems" onclick="toggleNavbarVisibility()" title="Toggle Navbar">></button>
+    <nav id="navbar"></nav>
+    <!-- Navbar created by constructNavbarHtml() within constructHtmlSections(). -->
+
+
+
+<!----------------------------------------------------------------|Mobile Apology -->
+    <div id="mobileApology" class="popupContainer">
+        <div class="popup">
+            <p class="popup_header alignItems">Notice:</p>
+            <p class="alignItems">This website isn't optimized for mobile viewing. I apologize for the inconvenience.</p>
+            <div class="alignItems"><button class="btn-closePopup" onclick="removeElementById('mobileApology')">OK</button></div>
+        </div>
+    </div>
+
+
+
+<!----------------------------------------------------------------|Main -->
+    <main id="main">
+        <!-- <div id="main_loadingOverlay"></div> -->
+        <div id="main_header">About Me</div>
+
+        <div id="aboutMeContainer" style="text-align: justify; padding: 1.2em;">
+            <p>
+                Hello, I'm <em class="myName">Kalen Weinheimer</em>, <br>
+                I'm a recent graduate of <em>The University of Montana</em>, with a B.A. in Media Arts, and a beginner game designer / developer, with a particular interest in level design, environmental storytelling, and world building. <br><br>
+                I have experience developing game projects with C# (in Unity) and JavaScript, and while I may not have much professional or show-worthy work just yet, I'm constantly working to learn more about game design and get better at game development. <br>
+                I am currently looking for an introductory job within the game industry as a game tester to learn more about game design and development, while also working on personal projects in my free time.
+            </p>
+
+            <br>
+
+            <p>
+                I don't have a ton of personal details to share, but, I grew up in a small town near the middle of Montana, and I have been playing video games since around middle school. <br><br>
+                Over the years, I have found that what I enjoy most about most about video games is exploring expansive worlds, searching for secrets / hidden details, and the feeling of adventure they can give.
+                Due to this, I care most about the unique interactability of the medium, and how this can create experiences not possible in any other form of media.
+                I place importance on gameplay above most any other aspect of a game, and think in terms of how other aspects can be used to further enhance the gameplay. <br><br>
+                However, I believe the best method of conveying what I value in a game is to list some of my favorite games and game genres.
+            </p>
+
+            <br><br>
+
+            <div id="favGamesSection">
+                <p>
+                    Starting with favorite game genres, I tend to most enjoy <abbr title="Role Playing Games">RPGs</abbr>, Immersive Sims, Sandbox Games, Puzzle Games, Rogue-Likes, and Retro-Style <span class="subtle">(/Boomer)</span> Shooters.
+                </p>
+                <br>
+                <p>
+                    And, some of my favorite games, which also serve as the basis for my inspirations in creating games, are:
+                </p>
+                <ul id="favGamesList">
+                    <li><em title="Arkane Studios; Oct 9, 2012"            >Dishonored                          </em></li>
+                    <li><em title="PlatinumGames; Feb 23, 2017"            >NieR: Automata                      </em></li>
+                    <li><em title="Bethesda Game Studios; May 1, 2002"     >The Elder Scrolls III: Morrowind    </em></li>
+                    <li><em title="Bethesda Game Studios; Nov 11, 2011"    >The Elder Scrolls V: Skyrim         </em></li>
+                    <li><em title="Mojang Studios; Nov 18 2011"            >Minecraft                           </em></li>
+                    <li><em title="Re-Logic; May 16, 2011"                 >Terraria                            </em></li>
+                    <li><em title="Valve; Oct 10, 2007 & Apr 18, 2011"     >Portal 1 & 2                        </em></li>
+                    <li><em title="Shiro Games; Apr 4, 2013 & Aug 25, 2015">Evoland 1 & 2                       </em></li>
+                    <li><em title="Hopoo Games; Aug 11, 2020"              >Risk of Rain 2                      </em></li>
+                    <li><em title="Flow Fire Games; Mar 16, 2018"          >Synthetik                           </em></li>
+                    <li><em title="KIRA LLC; Mar 15, 2022"                 >Lunacid                             </em></li>
+                    <li><em title="Lovely Hellplace; Jun 15, 2022"         >Dread Delusion                      </em></li>
+                </ul>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br>
+
+
+
+<!----------------------------------------------------------------|Footer -->
+        <footer id="footer"></footer>
+        <!-- Footer created by constructFooterHtml() within constructHtmlSections(). -->
+    </main>
+
+
+
+<!----------------------------------------------------------------|Script Reference(s) -->
+    <script src="./helperFunctions.js" defer></script>
+    <script src="./constructHtmlSections.js" defer></script>
+    <script src="./code.js" defer></script>
+</body>
+</html>
